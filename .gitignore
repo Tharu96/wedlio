@@ -33,4 +33,10 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 ## other
 *.editorconfig
 *Useful_Resources.pdf
-matrial/
+
+/material/font
+/material/css
+/material/js
+/material/scss
+
+
