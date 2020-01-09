@@ -27,6 +27,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('photographers');
 	}
 
+	public function Budgeter()
+	{
+		$this->load->view('customer/budgeter');
+	}
+
 	public function bridal_salons()
 	{
 		$this->load->view('bridalsalons');
