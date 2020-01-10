@@ -55,37 +55,62 @@ class Home extends CI_Controller {
 		/* local vendors */
 
 
-	public function reception_venues()
-	{
-		$this->load->view('reception_venues');
+
+	public function receptionVenues()
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('vendors/photographers');
+		$this->load->view('footer');
 	}
 
 	public function photographers()
-	{
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
 		$this->load->view('vendors/photographers');
+		$this->load->view('footer');
+	}
+
+	public function bridalSalons()
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('vendors/bridalSalons');
+		$this->load->view('footer');
 	}
 
 
-	public function bridal_salons()
-	{
-		$this->load->view('bridalsalons');
+	public function weddingBands()
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('vendors/weddingBands');
+		$this->load->view('footer');
 	}
 
-	public function dj_bands()
-	{
-		$this->load->view('dj&bands');
+	public function djs()
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('vendors/djs');
+		$this->load->view('footer');
 	}
 
 	public function florists()
-	{
-		$this->load->view('florists');
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('footer');
 	}
 
-	public function wedding_cake()
-	{
-		$this->load->view('wedding_cake');
+	public function weddingCake()
+	{	
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view('vendors/weddingCake');
+		$this->load->view('footer');
 	}
-
 
 
 

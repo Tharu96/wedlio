@@ -61,7 +61,7 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  responsive"alt="Card image cap">
                             <div class="card-body">
-                            <?php  echo anchor('Welcome/reception_venues', 'Reception Venues', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
+                            <?php  echo anchor('Home/receptionVenues', 'Reception Venues', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="card" style="width: 18rem;">
                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  alt="Card image cap">
                         <div class="card-body">
-                        <?php  echo anchor('Welcome/photographers', 'Wedding Photographers', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
+                        <?php  echo anchor('Home/photographers', 'Wedding Photographers', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
                     </div>
                     </div>
@@ -83,40 +83,40 @@
                     <div class="card" style="width: 18rem;">
                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  alt="Card image cap">
                         <div class="card-body">
-                        <?php  echo anchor('Welcome/bridal_salons', 'Bridal Salons', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
+                        <?php  echo anchor('Home/bridalSalons', 'Bridal Salon', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
                     </div>
                     </div>
                     <!--Grid column-->
 
                      <!--Grid column-->
-                     <div class="col-md-4 mb-1">
-                     <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
+                    <div class="col-md-4 mb-1">
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  alt="Card image cap">
                         <div class="card-body">
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/dj_bands"   class="btn btn-unique btn-sm " >DJ & Wedding Bands</a>
+                        <?php  echo anchor('Home/weddingBands', 'Wedding Bands', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
                     </div>
                     </div>
                     <!--Grid column-->
 
-                     <!--Grid column-->
-                     <div class="col-md-4 mb-1">
-                     <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid " src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  alt="Card image cap">
                         <div class="card-body">
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/florists"  class="btn btn-unique btn-sm " >Florists</a>
+                        <?php  echo anchor('Home/florists', 'Florists', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
                     </div>
                     </div>
                     <!--Grid column-->
 
-                     <!--Grid column-->
-                     <div class="col-md-4 mb-1">
-                     <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"  alt="Card image cap">
                         <div class="card-body">
-                        <a href="<?php echo base_url(); ?>index.php/Welcome/wedding_cake" class="btn btn-unique btn-sm " >Wedding Cakes</a>
+                        <?php  echo anchor('Home/weddingCake', 'Wedding Cake', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
                     </div>
                     </div>

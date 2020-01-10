@@ -1,46 +1,24 @@
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>WEDLIO</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="<?php echo base_url();?>assets/homepage/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="<?php echo base_url();?>assets/homepage/css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="<?php echo base_url();?>assets/homepage/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <!-- Start your project here-->
-	<?php include_once("navbar.php")?>
 
 
 <div id="slideshow" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora5.jpg" alt="First slide " class="responsive"
+    <img class="d-block w-100" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="First slide " class="responsive"
         style="background-repeat: no-repeat; 
 						
 							background-position: center;
 							background-size:cover;">
     </div>
     <div class="carousel-item">
-    <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora5.jpg" alt="First slide " class="responsive"
+    <img class="d-block w-100" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="First slide " class="responsive"
         style="background-repeat: no-repeat; 
 						
 							background-position: center;
 							background-size:cover;">
     </div>
     <div class="carousel-item">
-    <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora5.jpg" alt="First slide " class="responsive"
+    <img class="d-block w-100" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="First slide " class="responsive"
         style="background-repeat: no-repeat; 
 						
 							background-position: center;
@@ -83,7 +61,7 @@
                     <!--Grid column-->
                     <div class="col-md-4 mb-5">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/img.jpg" class="responsive"alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg"class="responsive"alt="Card image cap">
                             <div class="card-body">
                             <?php  echo anchor('localvendors/photographers/studio3000', 'Studio 3000 Photography', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                                 
@@ -96,7 +74,7 @@
                     <!--Grid column-->
                     <div class="col-md-4 mb-1">
                     <div class="card" style="width: 18rem;">
-                    <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/img.jpg" class="responsive"alt="Card image cap">
+                    <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" class="responsive"alt="Card image cap">
                         <div class="card-body">
                         <?php  echo anchor('localvendors/photographers/darkroom', 'Dark Room Photography', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                         </div>
@@ -107,7 +85,7 @@
                     <!--Grid column-->
                     <div class="col-md-4 mb-1">
                     <div class="card" style="width: 18rem;">
-                    <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/img.jpg" alt="Card image cap">
+                    <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
                         <div class="card-body">
                         <?php  echo anchor('vendor/photographers/two_rings_photography', 'Two Rings Photography ', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                      
@@ -119,7 +97,7 @@
                      <!--Grid column-->
                      <div class="col-md-4 mb-1">
                      <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/img.jpg" alt="Card image cap">
+                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
                         <div class="card-body">
                         <?php  echo anchor('vendor/photographers/pamod_photography', 'Pamod Randuwa Photography ', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                      
@@ -131,7 +109,7 @@
                      <!--Grid column-->
                      <div class="col-md-4 mb-1">
                      <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid " src="<?php echo base_url(); ?>assets/img.jpg" alt="Card image cap">
+                     <img class="card-img-top img-fluid " src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
                         <div class="card-body">
                         <?php  echo anchor('vendor/photographers/krish_photography', 'Krishan Krish Photography ', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                      
@@ -143,7 +121,7 @@
                      <!--Grid column-->
                      <div class="col-md-4 mb-1">
                      <div class="card" style="width: 18rem;">
-                     <img class="card-img-top img-fluid" src="<?php echo base_url(); ?>assets/img.jpg" alt="Card image cap">
+                     <img class="card-img-top img-fluid" src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
                         <div class="card-body">
                         <?php  echo anchor('vendor/photographers/lahiru_photography', 'Lahiru Sahan Photography ', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                      
@@ -244,19 +222,3 @@
             <!--Section: Best Features-->
           </div>
     
-
-  <?php include_once("footer.php")?>
-  <!-- Start your project here-->
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="<?php echo base_url();?>assets/homepage/js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="<?php echo base_url();?>assets/homepage/js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="<?php echo base_url();?>assets/homepage/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="<?php echo base_url();?>assets/homepage/js/mdb.min.js"></script>
-</body>
-
-</html>
