@@ -1,7 +1,7 @@
 <!--Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light white ">
 	<a class="navbar-brand" href="<?php echo base_url(); ?>index.php">
-		<img src="<?php echo base_url(); ?>assets/homepage/wedlio_img/WEDLIO5.png" height="50" alt="mdb logo">
+		<img src="<?php echo $this->config->item('base_url'); ?>/assets/img/wedlio_logo.png"  height="50" alt="mdb logo">
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -9,31 +9,27 @@
 
 	<div class="collapse navbar-collapse" id="navbarColor03">
 		<ul class="navbar-nav mr-auto">
+			
 			<li class="nav-item ">
-				<?php echo anchor('Welcome/planningTools', 'PLANNING TOOLS', ['class' => 'nav-link']); ?> </li>
-			<li class="nav-item">
-				<?php echo anchor('Welcome/adminPannel', 'WEDDING VISION', ['class' => 'nav-link']); ?>
+				<?php echo anchor('Home/PlanningTools', 'PLANNING TOOLS', ['class' => 'nav-link']); ?> 
+			</li>
 
-			</li>
 			<li class="nav-item">
-				<?php echo anchor('Welcome/localVendors', 'LOCAL VENDORS', ['class' => 'nav-link']); ?>	
+				<?php echo anchor('Home/WeddingVision', 'WEDDING VISION', ['class' => 'nav-link']); ?>
 			</li>
+			
 			<li class="nav-item">
-				<a class="nav-link" href="#">GALLERY</a>
+				<?php echo anchor('Home/LocalVendors', 'LOCAL VENDORS', ['class' => 'nav-link']); ?>	
 			</li>
+			
 			<li class="nav-item">
-				<?php echo anchor('Welcome/budgeter', 'BUDGETER', ['class' => 'nav-link']); ?>
+				<?php echo anchor('Home/Budgeter', 'BUDGETER', ['class' => 'nav-link']); ?>
+			</li>
 
+			<li class="nav-item">
+				<?php echo anchor('Home/Gallery', 'GALLERY', ['class' => 'nav-link']); ?>
 			</li>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">BUDGETER
-				</a>
-				<div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-					<a class="dropdown-item" href="#">Action</a>
-					<a class="dropdown-item" href="#">Another action</a>
-					<a class="dropdown-item" href="#">Something else here</a>
-				</div>
-			</li>
+		
 
 		</ul>
 		<ul class="navbar-nav ml-auto font-weight-bold">

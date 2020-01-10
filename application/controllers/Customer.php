@@ -19,7 +19,7 @@ class Customer extends CI_Controller {
 	}
 
 	public function photographers(){
-		$this->load->view('customer/photography');
+		$this->load->view('customer/vendors/photographers.php');
 	}
 
 
