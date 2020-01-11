@@ -55,7 +55,18 @@ class Home extends CI_Controller {
 		$this->load->view("header/customerRegistration");  
 		$this->load->view('footer');
         
-	  } 
+	  }
+
+	  public function customerDashboard(){ 
+		$this->load->view("customer/customerDashboard");
+		$this->load->view('header');
+		$this->load->view('navbar');
+	
+		
+
+		
+        
+	  }
 
 	  public function vendorRegistration(){  
 		$this->load->view('header');

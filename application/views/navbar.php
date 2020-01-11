@@ -29,6 +29,10 @@
 			<li class="nav-item">
 				<?php echo anchor('Home/Gallery', 'GALLERY', ['class' => 'nav-link']); ?>
 			</li>
+
+			<li class="nav-item">
+				<?php echo anchor('Home/CustomerDashboard', 'CUSTOMER DASHBOARD', ['class' => 'nav-link']); ?>
+			</li>
 		
 
 		</ul>
