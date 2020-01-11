@@ -1,17 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-	<head>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-	</head>
- 
-	<body> -->
-	<?php include_once("header.php")?>
-		<?php include_once("navbar.php")?>
 
 		<div class="m-5">
 		<h2><b>Create Account</b></h2>
@@ -92,8 +78,6 @@
 			</form>			
 		</div>
 
-		<?php include_once("footer.php")?>
-	</body>
 
 	<script>
         function validate(){
@@ -104,4 +88,3 @@
 		
     }
     </script>
-</html>

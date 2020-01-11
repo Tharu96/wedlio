@@ -41,13 +41,13 @@
 				<div class="dropdown">
 					<a class="nav-link dropdown-toggle pink-text" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SIGN UP
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/registration">Customer</a>
-						<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/registration/vendorRegistration">Vendor</a>
+						<a class="dropdown-item" href="<?php echo base_url('index.php/Home/customerRegistration');?>">Customer</a>
+						<a class="dropdown-item" href="<?php echo base_url('index.php/Home/vendorRegistration');?>">Vendor</a>
 					</div>
 				</div>
 			</li>
 			<li class="nav-item">
-				<a href="<?php echo base_url(); ?>index.php/login" class="nav-link pink-text" role="button">LOGIN</a>
+				<a href="<?php echo base_url('index.php/Home/login');?>" class="nav-link pink-text" role="button">LOGIN</a>
 				
 			</li>
 			<?php else:?>

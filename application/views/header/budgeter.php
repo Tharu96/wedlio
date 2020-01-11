@@ -33,6 +33,14 @@
 		<td>Reception Venues</td>
 		<td><input class="txt" type="text" name="txt"/></td>
 	</tr>
+	<tr>
+		<td>Wedding Cake</td>
+		<td><input class="txt" type="text" name="txt"/></td>
+	</tr>
+	<tr>
+		<td>Florists</td>
+		<td><input class="txt" type="text" name="txt"/></td>
+	</tr>
 	<tr id="summation">
 		<td>Sum :</td>
 		<td align="center"><span id="sum">0</span></td>

@@ -49,6 +49,30 @@ class Home extends CI_Controller {
 		$this->load->view('footer');	
 	}
 
+	public function customerRegistration(){  
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view("header/customerRegistration");  
+		$this->load->view('footer');
+        
+	  } 
+
+	  public function vendorRegistration(){  
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view("header/vendorRegistration");  
+		$this->load->view('footer');
+        
+	  } 
+
+	public function login(){  
+		$this->load->view('header');
+		$this->load->view('navbar');
+		$this->load->view("header/login");  
+		$this->load->view('footer');
+        
+	  } 
+
 
 
 
@@ -101,6 +125,7 @@ class Home extends CI_Controller {
 	{	
 		$this->load->view('header');
 		$this->load->view('navbar');
+		$this->load->view('vendors/florists');
 		$this->load->view('footer');
 	}
 

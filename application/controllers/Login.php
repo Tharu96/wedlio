@@ -9,16 +9,8 @@ class Login extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('session');
 	}
-	
-	public function index()
-	{
-		$this->load->view('login');
-	}
 
-	public function login(){  
-		
-        $this->load->view("login");  
-	  } 
+
 	  
 	public function login_validation(){
 		$this->load->library('form_validation');
