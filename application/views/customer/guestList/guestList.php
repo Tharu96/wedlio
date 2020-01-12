@@ -12,7 +12,7 @@
 
 
 <div class="container">
-	<h1 class="page-header text-center">Customer Details</h1>
+	<h1 class="page-header text-center">Guest Details</h1>
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2">
 			<a href="<?php echo base_url('index.php/guestController/addGuest') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a><br><br>
@@ -29,7 +29,7 @@
 				</thead>
 				<tbody>
 					<?php
-					foreach($guestList as $guest){
+					foreach($guestArray as $guest){
 						?>
 						<tr>
 							<td><?php echo $guest->name; ?></td>
@@ -38,9 +38,9 @@
 							<td><?php echo $guest->address; ?></td>
                             <td><?php echo $guest->email; ?></td>
                             <td><?php echo $guest->myNotes; ?></td>
-							<td><a href="<?php echo base_url(); ?>index.php/Users/edit/<?php echo $user->id; ?>" class="btn btn-success">
-                            <span class="glyphicon glyphicon-edit"></span> Edit</a> || 
-                            <a href="<?php echo base_url(); ?>index.php/users/delete/<?php echo $user->ID; ?>" class="btn btn-danger">
+							<td><a href="<?php echo base_url(); ?>index.php/guestController/editGuest/<?php echo $guest->id; ?>" class="btn btn-success">
+                            <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                            <a href="<?php echo base_url(); ?>index.php/guestController/deleteGuest/<?php echo $guest->id; ?>" class="btn btn-danger">
                             <span class="glyphicon glyphicon-trash"></span> Delete</a></td>
 						</tr>
 						<?php

@@ -9,63 +9,63 @@ class guestController extends CI_Controller {
 		$this->load->model('guestModel');
 	}
  
-	public function guest(){
-		
-		$data['guestList'] = $this->guestModel->getAllGuests();
-        $this->load->view('guestList', $data);
-        $this->load->view('customer/guestList/guestList');
+	public function showGuestList(){
+		$this->load->view("customer/customerDashboard");
+		$data['guestArray'] = $this->guestModel->getAllGuests();
+        $this->load->view('customer/guestList/guestList', $data);
 	}
  
 	public function addGuest(){
-	
-		$this->load->view('addGuest');
-
+		$this->load->view("customer/customerDashboard");
+		$this->load->view('customer/guestList/addGuest');
 	}
  
-	// public function addGuest(){
-	// 	$user['name'] = $this->input->post('name');
-	// 	$user['numberOfGuests'] = $this->input->post('numberOfGuests');
-	// 	$user['contactNumber'] = $this->input->post('contactNumber');
-    //     $user['address'] = $this->input->post('address');
-    //     $user['email'] = $this->input->post('email');
-    //     $user['myNotes'] = $this->input->post('myNotes');
- 
-	// 	$query = $this->Users_model->addGuest($guest);
- 
-	// 	if($query){
-	// 		header('location:'.base_url().$this->index());
-	// 	}
- 
-	// }
- 
-	// public function edit($id){
-	// 	$data['guest'] = $this->guestModel->getUser($id);
-	
-	// 	$this->load->view('updateGuest', $data);
+	public function insertGuest(){
+		$guest['name'] = $this->input->post('name');
+		$guest['numberOfGuests'] = $this->input->post('numberOfGuests');
+		$guest['contactNumber'] = $this->input->post('contactNumber');
+		$guest['address'] = $this->input->post('address');
+		$guest['email'] = $this->input->post('email');
+		$guest['myNotes'] = $this->input->post('myNotes');
 
-	// }
  
-	// public function update($id){
-	// 	$guest['name'] = $this->input->post('name');
-	// 	$guest['contact_number'] = $this->input->post('contact_number');
-	// 	$guest['email'] = $this->input->post('email');
-	// 	$guest['address'] = $this->input->post('address');
+		$query = $this->guestModel->insertGuest($guest);
  
-	// 	$query = $this->Users_model->updateuser($guest, $id);
+		if($query){
+			header('location:'.base_url('index.php/guestController/showGuestList').$this->showGuestList());
+		}
  
-	// 	if($query){
-	// 		header('location:'.base_url().$this->index());
-	// 	}
-	// }
+	}
  
-	// public function delete($id){
-	// 	$query = $this->Users_model->deleteuser($id);
+	public function editGuest($id){
+		$this->load->view("customer/customerDashboard");
+		$data['guest'] = $this->guestModel->getGuest($id);
+		$this->load->view('customer/guestList/updateGuest', $data);
+	}
  
-	// 	if($query){
-	// 		header('location:'.base_url().$this->index());
-	// 	}
-	// }
+	public function updateGuest($id){
+		$guest['name'] = $this->input->post('name');
+		$guest['numberOfGuests'] = $this->input->post('numberOfGuests');
+		$guest['contactNumber'] = $this->input->post('contactNumber');
+		$guest['address'] = $this->input->post('address');
+		$guest['email'] = $this->input->post('email');
+		$guest['myNotes'] = $this->input->post('myNotes');
+
+ 
+		$query = $this->guestModel->updateGuest($guest,$id);
+ 
+		if($query){
+			header('location:'.base_url('index.php/guestController/showGuestList').$this->showGuestList());
+		}
+	}
+ 
+	public function deleteGuest($id){
+		$query = $this->guestModel->deleteGuest($id);
+ 
+		if($query){
+			header('location:'.base_url('index.php/guestController/showGuestList').$this->showGuestList());
+		}
+	}
 }
- 
  
 ?>

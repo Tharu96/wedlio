@@ -6,28 +6,28 @@
 		}
  
 		public function getAllGuests(){
-			$query = $this->db->get('guestList');
+			$query = $this->db->get('guestlist');
 			return $query->result(); 
 		}
- 
-		public function addGuest($user){
-			return $this->db->insert('customers', $user);
+		public function insertGuest($guest){
+			return $this->db->insert('guestlist', $guest);
 		}
  
-		public function getGuest($ID){
-			$query = $this->db->get_where('customers',array('ID'=>$ID));
+		public function getGuest($id){
+			$query = $this->db->get_where('guestlist',array('id'=>$id));
 			return $query->row_array();
 		}
  
-		// public function updateuser($user, $ID){
-		// 	$this->db->where('customers.ID', $ID);
-		// 	return $this->db->update('customers', $user);
-		// }
+
+		public function updateGuest($guest, $id){
+			$this->db->where('guestlist.id', $id);
+			return $this->db->update('guestlist', $guest);
+		}
  
-		// public function deleteuser($ID){
-		// 	$this->db->where('customers.ID', $ID);
-		// 	return $this->db->delete('customers');
-		// }
- 
+		public function deleteGuest($id){
+			$this->db->where('guestlist.id', $id);
+			return $this->db->delete('guestlist');
+		}
+
 	}
 ?>

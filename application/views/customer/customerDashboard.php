@@ -283,7 +283,7 @@
                                     </a>
                                 </li> <br>
                                 <li>
-                                <a href="<?php echo base_url('index.php/guestController/guest');?>"
+                                <a href="<?php echo base_url('index.php/guestController/showGuestList');?>"
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         Guest List
                                     </a>
