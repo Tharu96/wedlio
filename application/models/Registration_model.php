@@ -20,9 +20,9 @@
             return 1;
 		}
 
-		public function addVendor($vendordata, $userdata){
+		public function addVendor($userdata, $vendordata){
 			$this->db->insert('user', $userdata);
-            $this->db->insert('customer', $vendordata);
+            $this->db->insert('vendor', $vendordata);
             return 1;
 		}
 
@@ -32,8 +32,11 @@
 		}
 		
 		public function getTempVendor($tempId) {
-			$q = $this->db->select('*')->from('vendortemp')->where('tempId',$tempId)->get();
-			return $q->result();
+			// $q = $this->db->select('*')->from('vendortemp')->where('tempId',$tempId)->get();
+			// return $q->result();
+
+			$query=$this->db->get_where('vendortemp', array('tempId'=>$tempId));
+			return $query->row();
 		}
 		
 

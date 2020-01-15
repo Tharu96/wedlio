@@ -1,15 +1,17 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
-	public function __constructor(){
+	public function __constructor()
+	{
 		$this->load->library('session');
 	}
-	
+
 	public function index()
 	{
-		$this->load->view('WedlioHome');
+		$this->load->view('wedliohome');
 	}
 
 	public function localVendors()
@@ -49,37 +51,26 @@ class Welcome extends CI_Controller {
 
 
 
-	public function dashboard()
-	{
-		$this->load->view('admin/dashboard');
-	}
+
 
 	public function user()
 	{
 		$this->load->view('admin/user');
 	}
 
-	public function user_details()
-	{
-		$this->load->view('admin/user_details');
-	}
 
-	public function register(){
+
+	public function register()
+	{
 		$this->load->view('register');
 	}
 
-	public function viewAllVendors(){
-		$this->load->view('admin/viewVendors');
-	}
 
-	public function viewAllCustomers(){
-		$this->load->view('admin/viewCustomers');
-	}
+
+
 
 	public function notification()
 	{
 		$this->load->view('admin/notification');
 	}
-
-
-} ?>
+}
