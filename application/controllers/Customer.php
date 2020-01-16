@@ -92,15 +92,6 @@ class Customer extends CI_Controller
 		$this->load->view('admin/viewallcustomers', $data);
 	}
 
-	public function marketplace()
-	{
-		$this->load->view('customer/vendors'); //this is not working. :/ same as vendorDisplay
-	}
-
-	public function photographers()
-	{
-		$this->load->view('customer/photography');
-	}
 
 	public function getNextCusId()
 	{
