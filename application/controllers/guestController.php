@@ -10,13 +10,13 @@ class guestController extends CI_Controller {
 	}
  
 	public function showGuestList(){
-		$this->load->view("customer/customerDashboard");
+		$this->load->view("customer/customerDashboardHeader");
 		$data['guestArray'] = $this->guestModel->getAllGuests();
         $this->load->view('customer/guestList/guestList', $data);
 	}
  
 	public function addGuest(){
-		$this->load->view("customer/customerDashboard");
+		$this->load->view("customer/customerDashboardHeader");
 		$this->load->view('customer/guestList/addGuest');
 	}
  
@@ -38,7 +38,7 @@ class guestController extends CI_Controller {
 	}
  
 	public function editGuest($id){
-		$this->load->view("customer/customerDashboard");
+		$this->load->view("customer/customerDashboardHeader");
 		$data['guest'] = $this->guestModel->getGuest($id);
 		$this->load->view('customer/guestList/updateGuest', $data);
 	}
