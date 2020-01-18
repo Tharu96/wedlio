@@ -32,6 +32,9 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+            <li class="nav-item">
+				<?php echo anchor('Home/CustomerDashboard', 'CUSTOMER DASHBOARD', ['class' => 'nav-link']); ?>
+			</li>
 
         </ul>
         <ul class="navbar-nav ml-auto font-weight-bold">
