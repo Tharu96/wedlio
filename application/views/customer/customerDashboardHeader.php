@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Inline validation is very easy to implement using the Architect Framework.">
     <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="<?php echo base_url();?>assets/homepage/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="<?php echo base_url();?>assets/homepage/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="<?php echo base_url();?>assets/homepage/css/style.css" rel="stylesheet">
     <!--
     =========================================================
     * ArchitectUI HTML Theme Dashboard - v1.0.0
@@ -85,7 +91,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <img width="100" class="rounded-circle" src="<?php echo $this->config->item('base_url'); ?>/assets/img/wedlio_logo.png" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -266,42 +272,35 @@
 
                                 <li>
                                     <a href="<?php echo base_url();?>index.php/main/index">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Check List
+                                    <i class="fas fa-tasks prefix pink-text"></i>
+                                          Check List
                                     </a>
                                 </li> <br>
                                 <li>
                                     <a href="<?php echo base_url();?>index.php/main/index">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="fas fa-cannabis prefix pink-text"></i>
                                         Vendors
                                     </a>
                                 </li> <br>
                                 <li>
-                                <a href="<?php echo base_url('index.php/Home/budgeter');?>"
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Budgeter
+                                    <a href="<?php echo base_url();?>index.php/main/index">
+                                    <i class="fas fa-money-check-alt prefix pink-text"></i>
+                                          Budgeter
                                     </a>
                                 </li> <br>
                                 <li>
-                                <a href="<?php echo base_url('index.php/guestController/showGuestList');?>"
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                <a href="<?php echo base_url('index.php/guestController/showGuestList');?>">
+                                        <i class="fas fa-list-ul prefix pink-text"></i>
                                         Guest List
                                     </a>
                                 </li> <br>
                                 <li>
                                     <a href="<?php echo base_url();?>index.php/main/index">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="fas fa-stream prefix pink-text"></i>
                                         Wedding Day Timel ine
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
-                                        Email
-                                    </a>
-                                </li>
-                           
-                                    
+                                
                      
                             
                                 
