@@ -95,4 +95,8 @@
 	</div>
 </div>
 
+</form>
+
+<button type="button" class="btn btn-outline-info btn-rounded waves-effect">Back To Dashboard</button>
+
 
