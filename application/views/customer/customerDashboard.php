@@ -1,98 +1,56 @@
-
-<center><h1>Your Wedding Details</h1></center>
-<br>
-<form action="">
-
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="inputfirstname">Engagement Date</label>
-		<input class="form-control" type="date" value="2014-04-07" id="example-date-input">
-	</div>
-	<div class="form-group col-md-6">
-    <label for="inputfirstname">Wedding Date</label>
-		<input class="form-control" type="date" value="2014-04-07" id="example-date-input">
-	</div>
-</div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="<?php echo base_url();?>assets/homepage/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="<?php echo base_url();?>assets/homepage/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="<?php echo base_url();?>assets/homepage/css/style.css" rel="stylesheet">
+</head>
 
 
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="inputfirstname">Wedding City</label>
-		<input class="form-control" type="text" value="" id="example-text-input" placeholder="Wedding City">
-	</div>
-	<div class="form-group col-md-6">
-		<label for="inputfirstname">wedding District</label>
-		<select class="form-control" id="sel1">
-            <option value="1">Ampara</option>
-		    <option value="2">Anuradhapura</option>
-		    <option value="3">Badulla</option>
-		    <option value="4">Batticaloa</option>
-		    <option value="5">Colombo</option>
-		    <option value="6">Galle</option>
-		    <option value="7">Gampaha</option>
-		    <option value="8">Hambantota</option>
-		    <option value="9">Jaffna</option>
-			<option value="10">Kalutara</option>
-			<option value="11">Kandy</option>
-			<option value="12">Kegalle</option>
-			<option value="13">Kilinochchi</option>
-			<option value="14">Kurunegala</option>
-			<option value="15">Mannar</option>
-			<option value="16">Mathale</option>
-			<option value="17">Matara</option>
-			<option value="18">Monaragala</option>
-			<option value="19">Mullaitivu</option>
-			<option value="20">Nuwara Eliya</option>
-			<option value="21">Polonnaruwa</option>
-			<option value="22">Puttalam</option>
-			<option value="23">Ratnapura</option>
-			<option value="24">Trincomalee</option>
-			<option value="25">Vavuniya</option>
-      </select>
-	</div>
-</div>
+            <!--Section: Contact-->
+            <section id="contact" style="background-color: #eee;">
 
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="inputfirstname">Number Of wedding Guests</label>
-		<select class="form-control" id="sel1">
-        <option>0-50</option>
-        <option>51-100</option>
-        <option>101-150</option>
-        <option>151-200</option>
-        <option>201-300</option>
-        <option>300+</option>
-      </select>
-	</div>
-</div>
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold text-center"> Welcome Back Kasun. 283 Days To Go!</h2>
+                <p><?php echo  $this->session->userdata('email'); ?></p>
+                <!--Grid row-->
+                <div class="row">
 
-<div class="form-row">
-	<div class="form-group col-md-6">
-    <label for="inputfirstname">Wedding Budget</label>
-    <select class="form-control" id="sel1">
-        <option>Rs: 0 - Rs: 500,000</option>
-        <option>Rs: 500,000 - Rs: 750,000</option>
-        <option>Rs: 750,000 - Rs: 1,000,000</option>
-        <option>Rs: 1,000,000 - Rs: 1,500,000</option>
-        <option>Rs: 1,500,000+</option>
-      </select>
-	</div>
-</div>
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-md-12" style="background-color: #eee;">
+                    <h3><p style="text-align:left;">
+                    Your Wedding Details
+                    <span style="float:right;">
+                    <a href="<?php echo base_url('index.php/customerDashboardController/updateCustomer');?>">
+<i class="metismenu-icon"></i>UPDATE</a></span></p></h3>
+                    <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
+                        alt="First slide">
+                    </div>
+                    </div>
 
-<div class="form-row">
-	<div class="form-group col-md-6">
-		<label for="inputfirstname">Desired Ceremony Setting - Choose 1</label>
-		<div class="radio">
-        <label><input type="radio" name="optradio" checked>     Option 1</label>
-        </div>
-        <div class="radio">
-        <label><input type="radio" name="optradio">     Option 2</label>
-        </div>
-        <div class="radio disabled">
-        <label><input type="radio" name="optradio">     Option 3</label>
-</div>
-	</div>
-</div>
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-md-12" style="background-color: #eee;">
+                        <!--Section: Gallery-->
+                    <section id="gallery">
+                        <!--Grid row-->
+                        <div class="row">
 
+                  
+                        <form class="p-5 grey-text">
+                            <div class="md-form form-sm"> <i class="fas fa-map-marker-alt prefix pink-text"></i> 
+                                <input type="text" id="form3" class="form-control form-control-sm " value="Location">
+                
+                            </div>
+                            <div class="md-form form-sm"> <i class="far fa-calendar-alt prefix pink-text"></i> 
+                                <input type="text" id="form2" class="form-control form-control-sm" value="Wedding Date">
+                                
+                            </div>
+                        </form>
 
-</form>
+          </div>
+          </div>
+
+          </section>
+          <hr class="my-5">
