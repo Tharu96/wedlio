@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class customerDashboardController extends CI_Controller {
+class updateCustomerController extends CI_Controller {
 
     function __construct(){
 		parent::__construct();
@@ -9,11 +9,12 @@ class customerDashboardController extends CI_Controller {
 		$this->load->model('getCustomerDataModel');
 	}
 
-
-	public function customerAccountSetting(){
+    	public function updateCustomer(){
 		$this->load->view("customer/customerDashboardHeader");
-        $this->load->view('customer/customerAccountSetting');
+		$data['customerData'] = $this->getCustomerDataModel->getCustomerData($email);
+        $this->load->view('customer/updateCustomer',$data);
 	}
+
 }
  
 ?>
