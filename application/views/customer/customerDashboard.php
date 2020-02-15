@@ -14,10 +14,11 @@
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold text-center"> Welcome Back Kasun. 283 Days To Go!</h2>
                 <p><?php echo  $this->session->userdata('email'); ?></p>
-<<<<<<< HEAD
-=======
                 <p><?php echo  $this->session->userdata('id'); ?></p>
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
+
+               
+
+
                 <!--Grid row-->
                 <div class="row">
 
@@ -26,13 +27,7 @@
                     <h3><p style="text-align:left;">
                     Your Wedding Details
                     <span style="float:right;">
-<<<<<<< HEAD
-                    <a href="<?php echo base_url('index.php/customerDashboardController/updateCustomer');?>">
-<i class="metismenu-icon"></i>UPDATE</a></span></p></h3>
-=======
-                    <a href="<?php echo base_url('index.php/updateCustomerController/updateCustomer');?>">
-                    <i class="metismenu-icon"></i>UPDATE</a></span></p></h3>
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
+                    <a href="<?php echo base_url(); ?>index.php/updateCustomerController/updateCustomer/<?php echo $this->session->userdata('id'); ?>" >UPDATE</a></span></p></h3>
                     <div class="carousel-item active">
                     <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
                         alt="First slide">
@@ -62,9 +57,6 @@
           </div>
 
           </section>
-<<<<<<< HEAD
-          <hr class="my-5">
-=======
           <hr class="my-5">
 
           <!--Section: Contact-->
@@ -98,4 +90,3 @@
 
         </section>
         <hr class="my-5">
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
