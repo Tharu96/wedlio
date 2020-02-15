@@ -39,7 +39,7 @@
         </ul>
         <ul class="navbar-nav ml-auto font-weight-bold">
             <li class="nav-item ">
-                <p><?php echo  $this->session->userdata('email'); ?>
+                <p><?php echo  $this->session->userdata('id'); ?>
             </li>
             <?php if ($this->session->userdata('logged_in') == false) : ?>
             <li class="nav-item">

@@ -30,22 +30,27 @@ class Login extends CI_Controller
 		$hash = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
+		
 
 
 		if ($this->form_validation->run()) {
 			//true  
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
+		
 			//model function  
 			$this->load->model('Login_model');
 			$encrypted_password = $this->Login_model->can_login($email);
-
+			$id = $this->Login_model->getID($email);
+			
 			if ($encrypted_password) {
-				if (password_verify($password, $encrypted_password)) {
+				if (password_verify($password, $encrypted_password)) {      //compares non hash with the hash
 					// echo 'Password is valid!';
 					$session_data = array(
-						'email'     =>     $email
+						'email' => $email,
+						'id' 	=> $id
 					);
+
 					$this->session->set_userdata($session_data);
 					// $temp = $this->session->userdata('email');
 					// echo $temp;

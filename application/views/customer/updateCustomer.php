@@ -1,7 +1,7 @@
 
 <h3>Your Wedding Details</h3>
 <br><br>
-
+<p><?php echo  $this->session->userdata('email'); ?></p>
 <form action="" >
 
 <div class="form-row">
