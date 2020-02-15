@@ -9,11 +9,14 @@ class customerDashboardController extends CI_Controller {
 		$this->load->model('getCustomerDataModel');
 	}
 
+<<<<<<< HEAD
     	public function updateCustomer(){
 		$this->load->view("customer/customerDashboardHeader");
 		
         $this->load->view('customer/updateCustomer');
 	}
+=======
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 
 	public function customerAccountSetting(){
 		$this->load->view("customer/customerDashboardHeader");

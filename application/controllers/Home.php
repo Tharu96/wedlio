@@ -58,9 +58,15 @@ class Home extends CI_Controller {
 	  }
 
 	  public function customerDashboard(){ 
+<<<<<<< HEAD
 		$this->load->view("customer/customerDashboard");
 		$this->load->view('header');
 		$this->load->view('navbar');
+=======
+		$this->load->view("customer/customerDashboardHeader");
+		$this->load->view("customer/customerDashboard");
+
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 	
 		
 

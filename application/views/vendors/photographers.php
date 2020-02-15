@@ -107,7 +107,11 @@
                      <!--Grid column-->
                      <div class="col-md-4 mb-1">
                      <div class="card" style="width: 18rem;">
+<<<<<<< HEAD
                      <img class="card-img-top img-fluid " src="<?php echo $this->config->item('base_url'); ?>/assets/img/krishphoto1.jpg" alt="Card image cap">
+=======
+                     <img class="card-img-top img-fluid " src="<?php echo $this->config->item('base_url'); ?>/assets/img/img01.jpg" alt="Card image cap">
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
                         <div class="card-body">
                         <?php  echo anchor('vendor/photographers/krish_photography', 'Krishan Krish Photography ', ['class'=> 'btn btn-unique btn-sm'] ); ?> 
                      
