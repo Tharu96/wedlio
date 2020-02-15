@@ -51,6 +51,31 @@
             }
            
         }
+
+        public function get_categoryId($vendorId){
+
+            $this->db->select('categoryId');
+            $this->db->from('vendor');
+            $this->db->where('userId',$vendorId);
+            $row = $this->db->get()->row();
+            if (isset($row)) {
+                return $row->categoryId;
+    
+            } else {
+                return false;
+            }	
+           
+        }
+
+        
+
+        public function get_packages($vendorId,$table_Name){
+
+               $query=$this->db->get_where($table_Name,array('userId'=>$vendorId));
+               if($query-> num_rows()>0){
+                   return $query->result();
+               }
+        }
        
 
     }

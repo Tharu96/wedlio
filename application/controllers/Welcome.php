@@ -48,8 +48,23 @@ class Welcome extends CI_Controller {
 
 	public function load_vendor_Accounts($vendorId){
 		$this->load->model('admin_panel');
-		$vendor["vendor_details"]=$this->admin_panel->get_vendor($vendorId);
-		$this->load->view('vendors/vendor_Profile',$vendor);
+		$vendor=$this->admin_panel->get_vendor($vendorId);
+
+		$vendor_category=$this->admin_panel->get_categoryId($vendorId);
+
+		if($vendor_category==7){
+			$table_Name='photopackages';
+		}
+		if($vendor_category==10){
+			$table_Name='florapackages';
+		}
+
+		
+		
+		$packages=$this->admin_panel->get_packages($vendorId,$table_Name);
+		$data["vendor_details"]=$vendor;
+		$data["vendor_packages"]=$packages;
+		$this->load->view('vendors/vendor_Profile',$data);
 		
 	}
 
