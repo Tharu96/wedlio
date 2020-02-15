@@ -77,7 +77,11 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
+<<<<<<< HEAD
+	'password' => 'ijse',
+=======
 	'password' => '',
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 	'database' => 'wedlio',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

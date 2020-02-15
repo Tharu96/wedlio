@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 <footer class="footer" style="background-color: #222;
     color: #ccc;
     padding: 60px 0 30px">
@@ -12,7 +16,11 @@
           <h6 class="text-uppercase font-weight-bold">Contact</h6>
           <p>warnasiri1996@gmail.com
           <br/>chethaniwanigasekara@gmail.com
+<<<<<<< HEAD
+          <br/>kasunharshana@gmail.com
+=======
           <br/>khguruge@gmail.com
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
           <br/>076 9319680</p>
           </div>
           </div>
@@ -21,5 +29,8 @@
          </footer>
 
 </body>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 </html>

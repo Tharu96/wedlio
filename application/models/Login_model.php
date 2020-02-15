@@ -17,6 +17,8 @@ class Login_model extends CI_Model
 			return false;
 		}
 	}
+<<<<<<< HEAD
+=======
 
 	function getID($email)
 	{
@@ -33,4 +35,5 @@ class Login_model extends CI_Model
 			return false;
 		}
 	}
+>>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 }
