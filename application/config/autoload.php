@@ -1,9 +1,6 @@
 <?php
-<<<<<<< HEAD
-defined('BASEPATH') OR exit('No direct script access allowed');
-=======
 defined('BASEPATH') or exit('No direct script access allowed');
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
+
 
 /*
 | -------------------------------------------------------------------
@@ -62,11 +59,9 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-<<<<<<< HEAD
-$autoload['libraries'] = array('database', 'form_validation','session');
-=======
+
 $autoload['libraries'] = array('database', 'session' , 'form_validation' );
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
+
 
 /*
 | -------------------------------------------------------------------
@@ -97,12 +92,9 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-<<<<<<< HEAD
-$autoload['helper'] = array('url');
-=======
 
 $autoload['helper'] = array('url'  ,'form' );
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
+
 
 /*
 | -------------------------------------------------------------------
