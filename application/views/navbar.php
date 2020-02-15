@@ -20,11 +20,7 @@
                 <?php echo anchor('Welcome/localVendors', 'LOCAL VENDORS', ['class' => 'nav-link']); ?>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
                 <?php echo anchor('Welcome/vendorDashboard', 'VENDOR DASHBOARD', ['class' => 'nav-link']); ?> 
-=======
-                <a class="nav-link" href="#">GALLERY</a>
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
@@ -43,11 +39,7 @@
         </ul>
         <ul class="navbar-nav ml-auto font-weight-bold">
             <li class="nav-item ">
-<<<<<<< HEAD
                 <p><?php echo  $this->session->userdata('email'); ?>
-=======
-                <p><?php echo  $this->session->userdata('id'); ?>
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
             </li>
             <?php if ($this->session->userdata('logged_in') == false) : ?>
             <li class="nav-item">

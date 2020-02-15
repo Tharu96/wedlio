@@ -30,28 +30,12 @@ class Login extends CI_Controller
 		$hash = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-<<<<<<< HEAD
-=======
-		
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
-
 
 		if ($this->form_validation->run()) {
 			//true  
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
-<<<<<<< HEAD
-			//model function  
-			$this->load->model('Login_model');
-			$encrypted_password = $this->Login_model->can_login($email);
 
-			if ($encrypted_password) {
-				if (password_verify($password, $encrypted_password)) {
-					// echo 'Password is valid!';
-					$session_data = array(
-						'email'     =>     $email
-					);
-=======
 		
 			//model function  
 			$this->load->model('Login_model');
@@ -66,7 +50,6 @@ class Login extends CI_Controller
 						'id' 	=> $id
 					);
 
->>>>>>> 0438689a3f0eb88e7634ae0e4a4028e409974674
 					$this->session->set_userdata($session_data);
 					// $temp = $this->session->userdata('email');
 					// echo $temp;
