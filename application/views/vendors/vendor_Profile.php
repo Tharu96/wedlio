@@ -127,6 +127,41 @@
 <!--Section: testimonials-->
 <hr class="my-5">
 
+<div class="row">
+                    <?php if(!empty($vendor_packages)){ foreach( $vendor_packages as $vendor_package){ ?>
+                        
+                    <div class="col-md-4 mb-5">
+                        <div class="card" style="width: 18rem;">
+                        <h4 class="my-4 font-weight-bold"><?php echo $vendor_package->name?></h4>
+                        <h5 class="my-4 font-weight-bold pink-text">RS.<?php echo $vendor_package->price?></h5>
+                            
+                           
+                            <?php
+                                
+                                $splitDes=explode(",",$vendor_package->description);
+                                foreach ($splitDes as $key => $value) {
+                                echo "* ".$value."<br>";
+                                }
+                            ?>
+                            <div class="card-body">
+                            
+                            <a class="btn btn-unique btn-sm" href="#"><?php echo $vendor_package->name?></a>
+                            
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <?php }
+                    }
+                    else{ ?>
+                        <p>Package not Found...</P>
+                    <?php } ?>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+
+
             <!--Section: Contact-->
             <section id="contact">
 
