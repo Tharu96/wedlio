@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,8 +9,7 @@
 
 </head>
 
-<body> -->
-    <?php include_once("header.php") ?>
+<body>
 	<?php include_once("navbar.php") ?>
 
 	<div class="m-5">
@@ -21,7 +20,7 @@
 
 		<hr>
 		<br>
-		<form onSubmit="return validate()" action="<?php echo base_url(); ?>index.php/registration/addVendorTemp" method="post" enctype="multipart/form-data" id="customerRegistration-form">
+		<form onSubmit="return validate()" action="<?php echo base_url(); ?>index.php/registration/addVendorTemp" method="post" id="customerRegistration-form">
 
 			<div class="form-row">
 				<div class="form-group col-md-6">
@@ -105,7 +104,7 @@
 
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label for="inputvendorCategory">Vendor Category ID</label>
+					<label for="inputvendorCategory">Vendor Category</label>
 					<select class="form-control" id="sel1" name="vendorcategory">
 						<option value="1">Photography</option>
 						<option value="2">Videography</option>
@@ -173,7 +172,7 @@
 				<div class="form-group col-md-6">
 					<label for="inputfirstname">Business Contact Number</label>
 					<!-- not required -->
-					<input type="text" class="form-control" name="businessContactNo" id="inputbusinessContactNo" placeholder="01128759462">
+					<input type="text" class="form-control" name="businessContNo" id="inputbusinessContactNo" placeholder="01128759462">
 				</div>
 				<div class="form-group col-md-6">
 					<label for="inputlastName">Business Email</label>

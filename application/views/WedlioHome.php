@@ -25,7 +25,7 @@
       <!--/First slide-->
       <!--Second slide-->
       <div class="carousel-item">
-        <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/t8 small.jpg" alt="Second slide" class="responsive"
+        <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora6small.jpg" alt="Second slide" class="responsive"
         style="background-repeat: no-repeat; 
         
         
@@ -36,7 +36,7 @@
       <!--/Second slide-->
       <!--Third slide-->
       <div class="carousel-item">
-        <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/t15 small.jpg" alt="Third slide" class="responsive"
+        <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora6small.jpg" alt="Third slide" class="responsive"
         style="background-repeat: no-repeat; 
         
        

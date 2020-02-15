@@ -19,22 +19,6 @@
             // $this->db->insert('vendorTemp',);
             return 1;
 		}
-
-		public function addVendor($vendordata, $userdata){
-			$this->db->insert('user', $userdata);
-            $this->db->insert('customer', $vendordata);
-            return 1;
-		}
-
-		public function deleteTempVendor($tempId){
-			$this->db->where('tempId',$tempId );
-			$this->db->delete('vendorTemp');
-		}
-		
-		public function getTempVendor($tempId) {
-			$q = $this->db->select('*')->from('vendortemp')->where('tempId',$tempId)->get();
-			return $q->result();
-		}
 		
 
 
@@ -58,9 +42,7 @@
             // SELECT * FROM `vendor` order by created_at desc LIMIT 1
             $ret = $query->row();
             return $ret->userId;
-		}
-		
-		
+        }
 
 
     }

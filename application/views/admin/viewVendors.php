@@ -1,26 +1,9 @@
-<?php include_once("header.php") ?>
-<?php include_once("leftpanel.php") ?>
-<?php include_once("navbar.php") ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script>
-	function deleteBranch(id) {
-		console.log("here")
-    $.post('<?php echo base_url();?>index.php/Registration/addVendor', {"tempId" : id }, function(data){
-
-		console.log(data)
-       //Your controller method would echo a 1 for success
-       if (data == 1) {
-           $("#user_" + id).fadeOut();
-		
-           //show some kind of message
-       }
-    });
-}
-</script>
-
-<div class="content">
+<?php include_once("header.php")?>
+<?php include_once("leftpanel.php")?>
+<?php include_once("navbar.php")?>
+	
+	<div class="content">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -80,8 +63,8 @@
 									<tr class="tr-shadow">
 									
 										<?php foreach ($h->result() as $row){?>
-										<tr id="user_<?= $row->tempId ?>">
-										<td><?php echo $row->tempId;?></td>
+										<tr>
+										<td><?php echo $row->userId;?></td>
 										<td><?php echo $row->firstName;?></td>
 										<td><?php echo $row->lastName;?></td>
 										<td><?php echo $row->contactNo;?></td>
@@ -98,11 +81,11 @@
 										<td>
 											<p style="margin:0;">
 												
-												
+												<a href="" >
 													<button type="button" class="btn btn-outline-primary btn-sm" id="accept" style="border:0;">
-													Accept<a href='javascript:deleteBranch(<?= $row->tempId; ?>)'></a>
+													Accept
 													</button>
-												
+												</a>
 
 												<a href="">
 													<button type="button" class="btn btn-outline-danger btn-sm" id="cancel" style="border:0;" onclick="return confirm('Are you sure you want to cancel?')">
@@ -160,7 +143,7 @@
 									</thead>
 									<tbody>
 										<tr class="tr-shadow">
-										<?php foreach ($k->result() as $row){?>
+										<?php foreach ($h->result() as $row){?>
 										<tr>
 										<td><?php echo $row->userId;?></td>
 										<td><?php echo $row->businessRegNo;?></td>
@@ -183,4 +166,7 @@
 			</div>
 		</div>
 	</div>
-	<?php include_once("footer.php") ?>
+<?php include_once("footer.php")?>
+
+
+

@@ -7,6 +7,18 @@ class Admin extends CI_Controller {
 		
 	}
 
+	
+
+	public function index()
+	{
+		//data from users
+		//$data['h'] = $this->user_model->getUsers();
+
+		// var_dump($data);     
+		//$this->load->view('admin/user_details', $data);
+		$this->load->view('admin/dashboard');
+	}
+
 	public function add_new_vendor_category()
 	{
 		$this->load->view('admin/addNewVendorCategory');

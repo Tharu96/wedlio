@@ -22,16 +22,37 @@ class Registration extends CI_Controller {
 		$date = date('Y-m-d H:i:s');
 		$nextCusId = $this->getNextCusId();
 
-		$nic = $this->input->post('NIC');
+		//image upload preferences
+		$config['upload_path'] = './uploads/customer/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 0;
+        $config['max_width'] = 0;
+		$config['max_height'] = 0;
+		$config['file_name'] = $nextCusId.'.jpg';
+        $config['overwrite'] = true;
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+
+        if ( ! $this->upload->do_upload('userfile'))
+        {
+            $error = array('error' => $this->upload->display_errors());
+            // $this->load->view('cusRegistration', $error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+            // $this->load->view('upload_success', $data);
+        }
 
 		//input data to be insert in to the user table
 		$userdata = array(
 			'userId' => $nextCusId,
             'firstName' => $this->input->post('firstname'),
             'lastName' => $this->input->post('lastname'),
-            'NIC' => $nic,
+            'NIC' => $this->input->post('NIC'),
             'contactNo' => $this->input->post('contactno'),
-            'Image' => './uploads/customer/'.$nic.'.jpg',
+            'Image' => './uploads/customer/'.$nextCusId,
 			'address' => $this->input->post('address'),
 			'username' => $this->input->post('email'),
 			'encrypted_password' => $hash,
@@ -39,30 +60,6 @@ class Registration extends CI_Controller {
 			'status'=>'1',
 			'created_at'=> $date                 
 		);
-
-
-		//image upload preferences
-		$config['upload_path'] = './uploads/customer/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 0;
-        $config['max_width'] = 0;
-		$config['max_height'] = 0;
-		$config['file_name'] = $userdata['NIC'].'.jpg';
-        $config['overwrite'] = true;
-
-		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
-
-        if ( ! $this->upload->do_upload('image'))
-        {
-            $error = array('error' => $this->upload->display_errors());
-            $this->load->view('cusRegistration', $error);
-        }
-        else
-        {
-            $data = array('upload_data' => $this->upload->data());
-            // $this->load->view('upload_success', $data);
-        }
 
 		//input data to be insert in to the customer table
 		$customerdata = array(
@@ -73,8 +70,7 @@ class Registration extends CI_Controller {
 		);
 		
         // var_dump($data);
-		$insert = $this->Registration_model->addCustomer($userdata, $customerdata);
-		echo 'Successfully Registered';
+        $insert = $this->Registration_model->addCustomer($userdata, $customerdata);
         echo json_encode(array("status" => TRUE));
         redirect(base_url('index.php/'));
 
@@ -103,18 +99,16 @@ class Registration extends CI_Controller {
 		$date = date('Y-m-d H:i:s');
 		$nextVenId = $this->getNextVenId();
 
-		$nic = $this->input->post('NIC');
-
-
+		//$categoryId = 
 
 		//input data to be insert in to the temperory vendor table untill admin accepts the vendor
 		$vendorTempdata = array(
-			// 'userId' => $nextVenId,
+			'userId' => $nextVenId,
             'firstName' => $this->input->post('firstname'),
             'lastName' => $this->input->post('lastname'),
-            'NIC' => $nic,
+            'NIC' => $this->input->post('NIC'),
             'contactNo' => $this->input->post('contactno'),
-			'Image' => './uploads/vendor/'.$nic.'.jpg',
+            'Image' => $this->input->post('image'),
 			'address' => $this->input->post('address'),
 			'username' => $this->input->post('email'),
 			'encrypted_password' => $hash,
@@ -126,35 +120,12 @@ class Registration extends CI_Controller {
 			'description'=>$this->input->post('description'),
 			'businessAddress' => $this->input->post('businessaddress'),
             'district' => $this->input->post('district'),
-            'businessContactNo' => $this->input->post('businessContactNo'),
+            'businessContactNo' => $this->input->post('businessContNo'),
 			'businessEmail' => $this->input->post('businessEmail'),
 			'categoryId' => '1'                
 		);
 
-		//$categoryId = 
-		//image upload preferences
-		$config['upload_path'] = './uploads/vendor/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 0;
-        $config['max_width'] = 0;
-		$config['max_height'] = 0;
-		$config['file_name'] = $vendorTempdata['NIC'].'.jpg';
-		$config['overwrite'] = true;
 		
-		$this->load->library('upload', $config);
-		$this->upload->initialize($config);
-
-        if ( ! $this->upload->do_upload('image'))
-        {
-            $error = array('error' => $this->upload->display_errors());
-            $this->load->view('cusRegistration', $error);
-        }
-        else
-        {
-            $data = array('upload_data' => $this->upload->data());
-            // $this->load->view('upload_success', $data);
-        }
-
 		
         // var_dump($data);
         $insert = $this->Registration_model->addVendorTemp($vendorTempdata);
@@ -162,65 +133,6 @@ class Registration extends CI_Controller {
         redirect(base_url('index.php/'));
 
 	}
-
-
-	public function addVendor(){
-		// $hash = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-		// $date = date('Y-m-d H:i:s');
-		// echo "<script>console.log('Reached')</script>";
-		$tempId = $_POST['tempId'];
-
-		$tempVendor = $this->Registration_model->getTempVendor($tempId); 
-
-		echo $tempVendor ."<br><br>";
-
-		echo $tempVendor->firstname;
-
-		$nextVenId = $this->getNextVenId();
-
-		$nic = $this->input->post('NIC');
-
-		$userdata = array(
-			'userId' => $nextVenId,
-            'firstName' => $tempVendor->firstname,
-            'lastName' => $tempVendor->lastname,
-            'NIC' => $nic,
-            'contactNo' => $tempVendor->contactno,
-            'Image' => $tempVendor->image,
-			'address' => $tempVendor->address,
-			'username' => $tempVendor->email,
-			'encrypted_password' => $tempVendor->password,
-			'user_role' => 'vendor',
-			'status'=>'1',
-			'created_at'=> $tempVendor->date                
-		);
-
-		// $nic = $this->input->post('NIC');
-
-		//input data to be insert in to the temperory vendor table untill admin accepts the vendor
-		$vendordata = array(
-			// 'userId' => $nextVenId,
-            'userId' => $nextVenId,
-			'businessRegNo' =>$tempVendor->businessRegNo,
-			'businessName' => $tempVendor->businessName,
-			'description'=>$tempVendor->description,
-			'businessAddress' => $tempVendor->businessAddress,
-            'district' => $tempVendor->district,
-            'businessContactNo' => $tempVendor->businessContactNo,
-			'businessEmail' => $tempVendor->businessEmail,
-			'categoryId' => $tempVendor->vendorcategory,               
-		);
-		
-        // var_dump($data);
-		$insert = $this->Registration_model->addVendor($vendordata, $userdata);
-		$this->Registration_model->deleteTempVendor($tempId);
-        echo json_encode(array("status" => TRUE));
-        redirect(base_url('index.php/'));
-
-	}
-
-
-
 
 	public function getNextVenId(){
 		$lastId = $this->Registration_model->getLastVenId();
@@ -238,4 +150,5 @@ class Registration extends CI_Controller {
 
 
 
+	
 }

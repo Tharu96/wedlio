@@ -12,6 +12,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('WedlioHome');
 	}
 
+	public function vendorDashboard(){
+		$this->load->view('vendors/vendorDashboard/dashboard');
+	}
+
 	public function localVendors()
 	{
 		$this->load_all_vendor_categories();

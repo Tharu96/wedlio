@@ -13,13 +13,10 @@ class Vendors extends CI_Controller {
 	
 	public function index()
 	{
-		$data['h']=$this->vendor_model->getVendorRequests();
-		$data['k'] = $this->vendor_model->getVendors();   
+		$data['h']=$this->vendor_model->getVendorRequests();   
 		// var_dump($data);     
 		$this->load->view('admin/viewVendors', $data);  	
 	}
-
-	
 
 		
 }
