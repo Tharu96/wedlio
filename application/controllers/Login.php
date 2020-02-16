@@ -17,7 +17,7 @@ class Login extends CI_Controller
 		$this->load->view('login');
 	}
 
-	public function login()3
+	public function login()
 	{
 
 		$this->load->view("login");
@@ -50,6 +50,7 @@ class Login extends CI_Controller
 					$session_data = array(
 						'email' => $email,
 						'id' 	=> $id
+						
 
 					);
 

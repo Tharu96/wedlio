@@ -9,7 +9,7 @@ class preferences_model extends CI_Model
 	public function check(){
 		$query = null; //emptying in case 
 
-		$id   =$this->session->userdata('uid');
+		$id   =$this->session->userdata('id');
 		$query = $this->db->get_where('categoriesselected', array(//making selection
             'userId' => $id
 		));
@@ -31,7 +31,7 @@ class preferences_model extends CI_Model
 
 	public function add_photopreference($photopref)
 	{
-		$userId = $this->session->userdata('uid');
+		$userId = $this->session->userdata('id');
 		$this->db->insert('prefphotography', $photopref);
 		$pref = array(
 			
@@ -45,7 +45,7 @@ class preferences_model extends CI_Model
 	public function add_receptionpreference($receptionpref)
 	{
 		$this->db->insert('prefreception', $receptionpref);
-		$userId = $this->session->userdata('uid');
+		$userId = $this->session->userdata('id');
 		$data = array('reception'=> 1);
 		$this->db->where('userId',$userId);
 		$this->db->update('categoriesselected',$data);
@@ -55,7 +55,7 @@ class preferences_model extends CI_Model
 	public function add_floristpreference($floristpref)
 	{
 		$this->db->insert('prefflorist', $floristpref);
-		$userId = $this->session->userdata('uid');
+		$userId = $this->session->userdata('id');
 		$data = array('florist'=> 1);
 		$this->db->where('userId',$userId);
 		$this->db->update('categoriesselected',$data);
@@ -65,7 +65,7 @@ class preferences_model extends CI_Model
 	public function add_djandbandpreference($djandbandpref)
 	{
 		$this->db->insert('prefdjandband', $djandbandpref);
-		$userId = $this->session->userdata('uid');
+		$userId = $this->session->userdata('id');
 		$data = array('djandbands'=> 1);
 		$this->db->where('userId',$userId);
 		$this->db->update('categoriesselected',$data);

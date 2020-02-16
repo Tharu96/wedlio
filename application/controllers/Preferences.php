@@ -18,7 +18,7 @@ class Preferences extends CI_Controller {
 
     public function photography() {
         $photopref = array(
-            'userId' => $this->session->userdata( 'uid' ),
+            'userId' => $this->session->userdata( 'id' ),
             'price' => $this->input->post( 'price' ),
             'description' => $this->input->post( 'description' )
         );
@@ -32,7 +32,7 @@ class Preferences extends CI_Controller {
 
     public function reception() {
         $receptionpref = array(
-            'userId' => $this->session->userdata( 'uid' ),
+            'userId' => $this->session->userdata( 'id' ),
             'price' => $this->input->post( 'price' ),
             'capacity' => $this->input->post( 'capacity' ),
             'description' => $this->input->post( 'description' )
@@ -47,7 +47,7 @@ class Preferences extends CI_Controller {
 
     public function florist() {
         $floristpref = array(
-            'userId' => $this->session->userdata( 'uid' ),
+            'userId' => $this->session->userdata( 'id' ),
             'price' => $this->input->post( 'price' ),
             'description' => $this->input->post( 'description' )
         );
@@ -60,7 +60,7 @@ class Preferences extends CI_Controller {
 
     public function djandband() {
         $djandbandpref = array(
-            'userId' => $this->session->userdata( 'uid' ),
+            'userId' => $this->session->userdata( 'id' ),
             'price' => $this->input->post( 'price' ),
             'hours' => $this->input->post( 'capacity' ),
             'description' => $this->input->post( 'description' )

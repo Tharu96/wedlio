@@ -47,13 +47,11 @@
                                     <th>
                                         Contact Person Email
                                     </th>
-                                    <th>
-                                        Contact Person NIC
-                                    </th>
+                                    
                                     <th>
                                         Contact Person Phone
                                     </th>
-                                    <th>Category</th>
+                                    
 
 
 
@@ -65,17 +63,17 @@
                                         <td><?php echo $row->userId; ?></td>
                                         <td><?php echo $row->businessName; ?></td>
                                         <td><?php echo $row->businessDescription; ?></td>
-                                        <td><?php echo $row->dcompanyWebsite; ?></td>
+                                        <td><?php echo $row->companyWebsite; ?></td>
                                         <td><?php echo $row->companyAddress; ?></td>
                                         <td><?php echo $row->district; ?></td>
                                         <td><?php echo $row->businessContactNo; ?></td>
-                                        <td><?php echo $row->companyDescription; ?></td>
+                                        <td><?php echo $row->companydescription; ?></td>
                                         <td><?php echo $row->firstName; ?><?php echo " " ?><?php echo $row->lastName; ?>
                                         </td>
                                         <td><?php echo $row->contactEmail; ?></td>
-                                        <td><?php echo $row->nic; ?></td>
+                                        
                                         <td><?php echo $row->contactNo; ?></td>
-                                        <td><?php echo $row->category; ?></td>
+                                        
                                         <td><?php echo $row->image; ?></td>
                                         <td><?php echo $row->createdAt; ?></td>
 
@@ -122,9 +120,7 @@
                                     <th>
                                         Contact Person Phonr
                                     </th>
-                                    <th>
-                                        Contact Person NIC
-                                    </th>
+                                    
 
                                 </thead>
                                 <tbody>
@@ -142,7 +138,7 @@
                                         </td>
                                         <td><?php echo $row->contactEmail; ?></td>
                                         <td><?php echo $row->contactNo; ?></td>
-                                        <td><?php echo $row->nic; ?></td>
+                                        
 
                                         <td>
                                             <p style="margin:0;">
