@@ -36,11 +36,13 @@
 
  </head>
 
- <body>
-     <?php include_once("navbar.php") ?>
+ <body>   
 
-     <div class="flex-container">
-         <div class="card text-center" style="width: 30rem; margin:0 auto;">
+     <div class="flex-container" style="min-height:100%; position:relative;">
+	 <div style="position:absolute; top:0; width:100%; " >
+	 	<?php include_once("navbar.php") ?>
+	</div>
+         <div class="card text-center" style="width: 30rem; margin:0 auto; position: absolute; ">
              <div class="card-body ">
                  <h4 class="card-title text-center mb-4 mt-1">Sign in</h4>
                  <hr>
@@ -65,10 +67,13 @@
                      <div class="form-group">
                          <button type="submit" class="btn btn-primary btn-block"> Login </button>
                      </div>
-                     <p class="text-center"><a href="#" class="btn">Forgot password?</a></p>
+                     <p class="text-center"><a href="<?php echo base_url(); ?>index.php/login/login_validation" class="btn">Login as a vendor?</a></p>
                  </form>
-             </div>
-         </div>
+             </div>			 
+         </div>	
+		 <div style="position:absolute; bottom:0; width:100%;" >
+			<?php include_once("footer.php") ?>	
+		</div>
+		
      </div>
-
-     <?php include_once("footer.php") ?>
+	 

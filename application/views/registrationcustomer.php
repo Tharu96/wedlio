@@ -13,6 +13,7 @@
 <?php include_once("header.php") ?>
 <?php include_once("navbar.php") ?>
 
+<?php echo validation_errors(); ?>
 <div class="m-5">
     <h2><b>Create Account</b></h2>
     <br>
@@ -24,14 +25,16 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputfirstname">First Name</label>
-                <input type="text" class="form-control" name="firstname" id="inputfirstname" placeholder="First Name">
+                <input type="text" class="form-control" name="firstname" id="inputfirstname" placeholder="First Name"
+                    value="<?php echo set_value('firstname'); ?>" size="50">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputlastName">Last Name</label>
-                <input type="text" class="form-control" name="lastname" id="inputlastName" placeholder="Last Name">
+                <input type="text" class="form-control" name="lastname" id="inputlastName" placeholder="Last Name"
+                    value="<?php echo set_value('lastname'); ?>">
             </div>
         </div>
-        <div class="form-row">
+        <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputNIC">NIC</label>
                 <input type="text" class="form-control" name="nic" id="inputNIC" placeholder="966592010v">
@@ -75,22 +78,24 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email"
+                    value="<?php echo set_value('email'); ?>" size="50">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputpassword1">Password</label>
-                <input type="password" class="form-control" name="password" id="inputpassword" placeholder="Password">
+                <input type="password" class="form-control" name="password" id="inputpassword" placeholder="Password"
+                    value="<?php echo set_value('password'); ?>" size="50">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputconfirmPassword1">Confirm Password</label>
                 <input type="password" class="form-control" name="confirmpassword" id="confirmpassword"
-                    placeholder="Confirm Password">
+                    placeholder="Confirm Password" value="<?php echo set_value('confirmpassword'); ?>" size="50">
             </div>
         </div>
         <div class="form-row">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary" value="Submit">Sign in</button>
             <button type="button" class="btn btn-danger">Reset</button>
         </div>
 
@@ -100,6 +105,8 @@
 
 
 
+
 </div>
+
 
 <?php include_once("footer.php") ?>

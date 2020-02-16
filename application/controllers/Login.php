@@ -38,12 +38,14 @@ class Login extends CI_Controller
 			$password = $this->input->post('password');
 			//model function  
 			$this->load->model('Login_model');
-			$encrypted_password = $this->Login_model->can_login($email);
+			$userid_password = $this->Login_model->can_login($email);
+			// var_dump($encrypted_password);
 
-			if ($encrypted_password) {
-				if (password_verify($password, $encrypted_password)) {
+			if ($userid_password["password"]) {
+				if (password_verify($password, $userid_password["password"])) {
 					// echo 'Password is valid!';
 					$session_data = array(
+						'uid' =>  $userid_password["uid"],
 						'email'     =>     $email
 					);
 					$this->session->set_userdata($session_data);
