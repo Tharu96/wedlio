@@ -32,9 +32,18 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
+
+			<?php if ($this->session->userdata('logged_in') == True) : ?>
+				<li class="nav-item">
+                <a href="<?php echo base_url(); ?>index.php/preferences/" class="nav-link pink-text"
+                    role="button">Recomendations</a>
+            </li>
+			<?php endif; ?>
+
             <li class="nav-item">
 				<?php echo anchor('Home/CustomerDashboard', 'CUSTOMER DASHBOARD', ['class' => 'nav-link']); ?>
 			</li>
+
 
         </ul>
         <ul class="navbar-nav ml-auto font-weight-bold">
@@ -65,6 +74,7 @@
                     role="button">LOGOUT</a>
 
             </li>
+			
             <?php endif; ?>
 
         </ul>

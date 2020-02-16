@@ -17,7 +17,7 @@ class Login extends CI_Controller
 		$this->load->view('login');
 	}
 
-	public function login()
+	public function login()3
 	{
 
 		$this->load->view("login");
@@ -39,6 +39,8 @@ class Login extends CI_Controller
 		
 			//model function  
 			$this->load->model('Login_model');
+
+
 			$encrypted_password = $this->Login_model->can_login($email);
 			$id = $this->Login_model->getID($email);
 			
@@ -48,6 +50,7 @@ class Login extends CI_Controller
 					$session_data = array(
 						'email' => $email,
 						'id' 	=> $id
+
 					);
 
 					$this->session->set_userdata($session_data);

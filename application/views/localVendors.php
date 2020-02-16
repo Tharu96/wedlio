@@ -35,14 +35,14 @@
     <div class="carousel-item">
     <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora1.jpg" alt="First slide " class="responsive"
         style="background-repeat: no-repeat; 
-						
+
 							background-position: center;
 							background-size:cover;">
     </div>
     <div class="carousel-item">
     <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/flora1.jpg" alt="First slide " class="responsive"
         style="background-repeat: no-repeat; 
-						
+							
 							background-position: center;
 							background-size:cover;">
     </div>

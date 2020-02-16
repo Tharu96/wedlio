@@ -9,15 +9,16 @@ class Login_model extends CI_Model
 		$this->db->where('email', $email);
 		$query = $this->db->get();
 		//SELECT * FROM users WHERE username = '$username' AND password = '$password'  
+		// var_dump($query);
 
 		if ($query->num_rows() > 0) {
 			$ret = $query->row();
+			// var_dump($ret);
 			return $ret->password;
 		} else {
 			return false;
 		}
 	}
-
 
 	function getID($email)
 	{
