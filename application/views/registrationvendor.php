@@ -168,8 +168,7 @@
                     <option value="23">Ratnapura</option>
                     <option value="24">Trincomalee</option>
                     <option value="25">Vavuniya</option>
-
-                </select>
+                    </select>
             </div>
 
         </div>

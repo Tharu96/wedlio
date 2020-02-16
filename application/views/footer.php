@@ -3,8 +3,10 @@
 
 <footer class="footer" style="background-color: #222;
     color: #ccc;
-    padding: 60px 0 30px">
+	padding: 60px 0 30px;
+	" >
           <div class="container">
+
           <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12">
           <h6 class="text-uppercase font-weight-bold">Welcome to your day, your way.</h6>
@@ -20,6 +22,7 @@
 
           <br/>076 9319680</p>
           </div>
+
           </div>
           <div class="footer-copyright text-center">© 2019 Copyright:
          WEDLIO</div>

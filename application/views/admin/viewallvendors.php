@@ -47,13 +47,11 @@
                                     <th>
                                         Contact Person Email
                                     </th>
-                                    <th>
-                                        Contact Person NIC
-                                    </th>
+                                    
                                     <th>
                                         Contact Person Phone
                                     </th>
-                                    <th>Category</th>
+                                    
 
 
 
@@ -73,9 +71,11 @@
                                         <td><?php echo $row->firstName; ?><?php echo " " ?><?php echo $row->lastName; ?>
                                         </td>
                                         <td><?php echo $row->contactEmail; ?></td>
+
                                     
                                         <td><?php echo $row->contactNo; ?></td>
                                         <td><?php echo $row->categoryId; ?></td>
+
                                         <td><?php echo $row->image; ?></td>
                                         <td><?php echo $row->createdAt; ?></td>
 
@@ -122,9 +122,7 @@
                                     <th>
                                         Contact Person Phonr
                                     </th>
-                                    <th>
-                                        Contact Person NIC
-                                    </th>
+                                    
 
                                 </thead>
                                 <tbody>
@@ -142,7 +140,7 @@
                                         </td>
                                         <td><?php echo $row->contactEmail; ?></td>
                                         <td><?php echo $row->contactNo; ?></td>
-                                        <td><?php echo $row->nic; ?></td>
+                                        
 
                                         <td>
                                             <p style="margin:0;">

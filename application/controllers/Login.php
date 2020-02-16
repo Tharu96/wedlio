@@ -40,6 +40,8 @@ class Login extends CI_Controller
 		
 			//model function  
 			$this->load->model('Login_model');
+
+
 			$encrypted_password = $this->Login_model->can_login($email);
 			$id = $this->Login_model->getID($email);
 			$level = $this->Login_model->getuserlevel($email);
@@ -49,8 +51,10 @@ class Login extends CI_Controller
 					// echo 'Password is valid!';
 					$session_data = array(
 						'email' => $email,
+
 						'id' 	=> $id,
 						'level' => $level
+
 					);
 
 					$this->session->set_userdata($session_data);

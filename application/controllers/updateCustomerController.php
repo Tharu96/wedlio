@@ -9,11 +9,27 @@ class updateCustomerController extends CI_Controller {
 		$this->load->model('getCustomerDataModel');
 	}
 
-    	public function updateCustomer(){
+    	public function updateCustomer($id){
+    	$data['customerData'] = $this->getCustomerDataModel->getWeddingData($id);
 		$this->load->view("customer/customerDashboardHeader");
-		$data['customerData'] = $this->getCustomerDataModel->getCustomerData($email);
+		
         $this->load->view('customer/updateCustomer',$data);
 	}
+
+	public function update($id){
+		$weddingdetails['engagementDate'] = $this->input->post('engagementDate');
+		$weddingdetails['weddingDate'] = $this->input->post('weddingDate');
+		$weddingdetails['weddingCity'] = $this->input->post('weddingCity');
+		$weddingdetails['weddingDistrict'] = $this->input->post('weddingDistrict');
+		$weddingdetails['numberOfWeddingGuests'] = $this->input->post('numberOfWeddingGuests');
+		$weddingdetails['weddingBudget'] = $this->input->post('weddingBudget');
+	
+		$query = $this->getCustomerDataModel->updateWeddingDetails($weddingdetails, $id);
+
+		if($query){
+			header('location:'.$this->updateCustomer($id));
+		}
+}
 
 }
  
