@@ -17,7 +17,7 @@ class Login extends CI_Controller
 		$this->load->view('login');
 	}
 
-	public function login()
+	public function login()3
 	{
 
 		$this->load->view("login");
@@ -31,23 +31,28 @@ class Login extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
-
 		if ($this->form_validation->run()) {
 			//true  
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
+
+		
 			//model function  
 			$this->load->model('Login_model');
-			$userid_password = $this->Login_model->can_login($email);
-			// var_dump($encrypted_password);
 
-			if ($userid_password["password"]) {
-				if (password_verify($password, $userid_password["password"])) {
+
+			$encrypted_password = $this->Login_model->can_login($email);
+			$id = $this->Login_model->getID($email);
+			
+			if ($encrypted_password) {
+				if (password_verify($password, $encrypted_password)) {      //compares non hash with the hash
 					// echo 'Password is valid!';
 					$session_data = array(
-						'uid' =>  $userid_password["uid"],
-						'email'     =>     $email
+						'email' => $email,
+						'id' 	=> $id
+
 					);
+
 					$this->session->set_userdata($session_data);
 					// $temp = $this->session->userdata('email');
 					// echo $temp;
