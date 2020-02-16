@@ -179,7 +179,8 @@
                                     </a>
                                 </li> <br>
                                 <li>
-                                    <a href="<?php echo base_url('index.php/customerDashboardController/customerAccountSetting');?>">
+                                   
+                                    <a href="<?php echo base_url(); ?>index.php/customerDashboardController/customerAccountSetting/<?php echo $this->session->userdata('id'); ?>">
                                         <i class="far fa-sun prefix pink-text"></i>
                                        Account Setting
                                     </a>

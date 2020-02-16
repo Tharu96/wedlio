@@ -9,10 +9,12 @@ class customerDashboardController extends CI_Controller {
 		$this->load->model('getCustomerDataModel');
 	}
 
-	public function customerAccountSetting(){
+	public function customerAccountSetting($id){
+		$data['accountData'] = $this->getCustomerDataModel->getAccountData($id);
 		$this->load->view("customer/customerDashboardHeader");
-        $this->load->view('customer/customerAccountSetting');
+        $this->load->view('customer/customerAccountSetting',$data);
 	}
 }
  
 ?>
+

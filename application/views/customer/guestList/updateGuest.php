@@ -17,6 +17,7 @@
 			</h3>
 			<hr>
 			<?php extract($guest); ?>
+			<?php echo $id; ?>
 			<form method="POST" action="<?php echo base_url(); ?>index.php/guestController/updateGuest/ <?php echo $id; ?>">
 				<div class="form-group">
 					<label>Name:</label>

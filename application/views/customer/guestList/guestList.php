@@ -10,11 +10,11 @@
 </head>
 <body>
 
-
+<h4>
 <div class="container">
 	<h1 class="page-header text-center">Guest Details</h1>
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
+		<div class="col-md-8 col-md-offset-2">
 			<a href="<?php echo base_url('index.php/guestController/addGuest') ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</a><br><br>
 			<table class="table table-bordered table-striped">
 				<thead>
@@ -25,6 +25,7 @@
 						<th>Address</th>
                         <th>Email</th>
 						<th>My Notes</th>
+						<th>EDIT | DELETE | SEND MAIL</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -39,10 +40,18 @@
                             <td><?php echo $guest->email; ?></td>
                             <td><?php echo $guest->myNotes; ?></td>
 							<td><a href="<?php echo base_url(); ?>index.php/guestController/editGuest/<?php echo $guest->id; ?>" class="btn btn-success">
-                            <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                            <span class="glyphicon glyphicon-edit"></span></a>
+
                             <a href="<?php echo base_url(); ?>index.php/guestController/deleteGuest/<?php echo $guest->id; ?>" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                            <span class="glyphicon glyphicon-trash"></span></a>
+
+							<a href="<?php echo base_url(); ?>index.php/guestController/sendEmail/<?php echo $guest->id; ?>" class="btn btn-success">
+                            <span class="glyphicon glyphicon-envelope"></span></a></td>
+
+							
+
 						</tr>
+						
 						<?php
 					}
 					?>
@@ -51,5 +60,6 @@
 		</div>
 	</div>
 </div>
+</h4>
 </body>
 </html>
