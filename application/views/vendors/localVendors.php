@@ -92,12 +92,12 @@
                                 </div>
                             </div>
                         </div>
-                        <?php }
-                        }
-                        else{ ?>
-                            <p>Vendor not Found...</P>
-                        <?php } ?>
-                        </div>
+                <?php }
+                }
+                else{ ?>
+                <p>Vendor not Found...</P>
+                <?php } ?>
+                </div>
                         <!--Grid column-->
                 </div>
                 <!--Grid row-->

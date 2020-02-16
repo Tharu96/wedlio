@@ -23,9 +23,9 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo base_url(); ?>index.php/User/view_user">
+                    <a class="nav-link" href="<?php echo base_url(); ?>index.php/Admin/load_admin_data">
                         <i class="material-icons">account_circle</i>
-                        <p>User Profile</p>
+                        <p>Admin Profile</p>
                     </a>
                 </li>
                 <li class="nav-item ">

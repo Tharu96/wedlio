@@ -14,14 +14,117 @@ class Vendor extends CI_Controller
 
 	public function index()
 	{
-		//data from vendortemp
-		//$data['h'] = $this->vendor_model->getVendorRequests();
+		$this->load->view('vendors/vendorDashboard/dashboard');
+	}
 
-		// data from vendor
-		//$data['k'] = $this->vendor_model->getVendors();
+	public function dashboard_vendor_details()
+	{
+		$userId=$this->session->userdata('id');
+		$this->load->model('admin_panel');
+		$vendor=$this->admin_panel->get_vendor($userId);
+		$this->load->view('vendors/vendorDashboard/user',$vendor);
+	}
 
-		// var_dump($data);     
-		//$this->load->view('admin/viewVendors', $data);
+	public function dashboard_vendor_packages()
+	{
+		$userId=$this->session->userdata('id');
+		$this->load->model('admin_panel');
+		$vendor_category=$this->admin_panel->get_categoryId($userId);
+		if($vendor_category==7){
+			$table_Name='photopackages';
+		}
+		if($vendor_category==10){
+			$table_Name='florapackages';
+		}
+		$packages=$this->admin_panel->get_packages($userId,$table_Name);
+		$data['packages']=$packages;
+		$this->load->view('vendors/vendorDashboard/packages',$data);
+	}
+
+	public function dashboard_vendor_notification()
+	{
+		$this->load->view('vendors/vendorDashboard/notification');
+	}
+
+	public function vendor_profile_update($userId)
+	{
+		
+		
+		$this->form_validation->set_rules('businessName','Business Name','required');
+		$this->form_validation->set_rules('firstName','First Name','required');
+		$this->form_validation->set_rules('lastName','Last Name','required');
+		$this->form_validation->set_rules('companyWebsite','Company Website','required');
+		$this->form_validation->set_rules('companyAddress','Company Address','required');
+		$this->form_validation->set_rules('businessDescription','Business Description','required');
+		$this->form_validation->set_rules('contactEmail','Email','required');
+		$this->form_validation->set_rules('businessContactNo','Business Contact No','required');
+		$this->form_validation->set_rules('contactNo','Contact No','required');
+	
+		
+		
+		if($this->form_validation->run()){
+			
+			
+			
+			$data=array(
+				
+				"businessName" =>$this->input->post("businessName"),
+				"firstName" =>$this->input->post("firstName"),
+				"lastName" =>$this->input->post("lastName"),
+				"companyWebsite" =>$this->input->post("companyWebsite"),
+				"companyAddress" =>$this->input->post("companyAddress"),
+				"businessDescription" =>$this->input->post("businessDescription"),
+				"contactEmail" =>$this->input->post("contactEmail"),
+				"businessContactNo" =>$this->input->post("businessContactNo"),
+				"contactNo" =>$this->input->post("contactNo")
+				
+			);
+			
+			$config=[
+				'upload_path'=>'./uploads',
+				'allowed_types'=>'gif|png|jpg|jppeg'
+			];
+
+			
+
+			// $this->load->library('upload',$config);
+			
+
+			// // $this->form_validation->set_error_delimiters();
+			// echo 'test';
+			// if(true){
+			// 	echo 'test5';
+			// 	$data=$this->input->post();
+			// 	$info=$this->upload->data();
+			// 	echo '<pre>';
+			// 	print_r($info);
+			// 	echo '</prev>';
+			// 	$image_path=($info['raw_name'].$info['file_ext']);
+				
+			// 	print_r($image_path);
+			// 	//exit();
+				
+				
+			// 	$data['DpPath' ]=$image_path;
+			 	unset($data['submit']);
+				$this->load->model('vendor_model');
+				if($this->vendor_model->updateVendor($userId,$data)){
+					echo 'Vendor Details updated Successfully';
+				}
+				else{
+				  echo 'Failed to update Vendor Details';
+				}
+				exit();
+			
+		}else{
+		  $this->dashboard_vendor_details();
+		
+	  	}
+
+	}
+	public function add_new_vendor_category()
+	{
+		$this->load->view('admin/addNewVendorCategory');
 	}
 
 	public function vendor_registration()

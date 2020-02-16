@@ -20,6 +20,15 @@ class Admin extends CI_Controller
 		$this->load->view('admin/dashboard');
 	}
 
+
+	public function load_admin_data(){
+		
+		$adminId=$this->session->userdata('id');
+		$this->load->model('admin_panel');
+		$admin=$this->admin_panel->get_admin($adminId);
+		$this->load->view('admin/user',$admin);
+	}
+
 	public function add_new_vendor_category()
 	{
 		$this->load->view('admin/addNewVendorCategory');
@@ -27,8 +36,8 @@ class Admin extends CI_Controller
 	
 	public function category_save(){
 		
-		$this->form_validation->set_rules('categoryName','Art Name','required');
-		$this->form_validation->set_rules('description','Artist Name','required');
+		$this->form_validation->set_rules('categoryName','Category Name','required');
+		$this->form_validation->set_rules('description','Description','required');
 
 		
 		if($this->form_validation->run()){
@@ -37,20 +46,20 @@ class Admin extends CI_Controller
 				"categoryName" =>$this->input->post("categoryName"),
 				"description" =>$this->input->post("description")
 			);
-			echo 'testing1';
+			
 			$config=[
 				'upload_path'=>'./uploads',
 				'allowed_types'=>'gif|png|jpg|jppeg'
 			];
 
-			echo 'testing2';
+			
 
 			$this->load->library('upload',$config);
-			echo 'testing3';
+			
 			$this->form_validation->set_error_delimiters();
-			echo 'testing4';
+			
 			if($this->upload->do_upload()){
-				echo 'testing5';
+				
 				$data=$this->input->post();
 				$info=$this->upload->data();
 				echo '<pre>';

@@ -19,9 +19,7 @@
             <li class="nav-item">
                 <?php echo anchor('Welcome/localVendors', 'LOCAL VENDORS', ['class' => 'nav-link']); ?>
             </li>
-            <li class="nav-item">
-                <?php echo anchor('Welcome/vendorDashboard', 'VENDOR DASHBOARD', ['class' => 'nav-link']); ?> 
-            </li>
+           
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">BUDGETER
@@ -60,7 +58,7 @@
                                 href="<?php echo base_url(); ?>index.php/customer/customer_registration">Customer</a>
                             <a class="dropdown-item"
                                 href="<?php echo base_url(); ?>index.php/vendor/vendor_registration">Vendor</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/admin">Admin</a>
+                            
                         </div>
                 </div>
             </li>

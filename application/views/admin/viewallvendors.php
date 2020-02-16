@@ -71,9 +71,11 @@
                                         <td><?php echo $row->firstName; ?><?php echo " " ?><?php echo $row->lastName; ?>
                                         </td>
                                         <td><?php echo $row->contactEmail; ?></td>
-                                        
+
+                                    
                                         <td><?php echo $row->contactNo; ?></td>
-                                        
+                                        <td><?php echo $row->categoryId; ?></td>
+
                                         <td><?php echo $row->image; ?></td>
                                         <td><?php echo $row->createdAt; ?></td>
 
