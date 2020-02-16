@@ -42,6 +42,7 @@ class Vendor_model extends CI_Model
 	{
 		$this->db->insert('user', $userdata);
 		$this->db->insert('vendor', $vendordata);
+		var_dump($userdata);
 		return 1;
 	}
 

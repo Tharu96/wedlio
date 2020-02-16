@@ -31,16 +31,33 @@
                 </div>
             </li>
 
-			<?php if ($this->session->userdata('logged_in') == True) : ?>
+			<?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==3) : ?>
 				<li class="nav-item">
                 <a href="<?php echo base_url(); ?>index.php/preferences/" class="nav-link pink-text"
                     role="button">Recomendations</a>
             </li>
 			<?php endif; ?>
 
-            <li class="nav-item">
-				<?php echo anchor('Home/CustomerDashboard', 'CUSTOMER DASHBOARD', ['class' => 'nav-link']); ?>
-			</li>
+            <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==1) : ?>
+				<li class="nav-item">
+                <a href="<?php echo base_url(); ?>index.php/admin" class="nav-link pink-text"
+                    role="button">Dashboard</a>
+            </li>
+			<?php endif; ?>
+
+            <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==2) : ?>
+				<li class="nav-item">
+                <a href="<?php echo base_url(); ?>index.php/welcome/vendorDashboard" class="nav-link pink-text"
+                    role="button">Dashboard</a>
+            </li>
+			<?php endif; ?>
+
+            <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==3) : ?>
+				<li class="nav-item">
+                <a href="<?php echo base_url(); ?>index.php/Home/customerDashboard" class="nav-link pink-text"
+                    role="button">Dashboard</a>
+            </li>
+			<?php endif; ?>
 
 
         </ul>
