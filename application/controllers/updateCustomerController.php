@@ -10,7 +10,7 @@ class updateCustomerController extends CI_Controller {
 	}
 
     	public function updateCustomer($id){
-    		$data['customerData'] = $this->getCustomerDataModel->getCustomerData($id);
+    	$data['customerData'] = $this->getCustomerDataModel->getWeddingData($id);
 		$this->load->view("customer/customerDashboardHeader");
 		
         $this->load->view('customer/updateCustomer',$data);
