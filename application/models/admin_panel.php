@@ -5,7 +5,17 @@
 			parent::__construct();
 			$this->load->database();
         }
-        
+
+        public function get_admin($adminId){
+            $this->db->where('userId',$adminId);
+            $admin=$this->db->get("admin");
+            if($admin)
+            {
+                return $admin->row(0);
+            }else{
+                return false;
+            }
+        }
         public function add_vendor_category($data){
             return $this->db->insert('category',$data);
         }

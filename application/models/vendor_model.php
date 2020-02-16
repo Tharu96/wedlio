@@ -9,6 +9,15 @@ class Vendor_model extends CI_Model
 		$this->load->helper(array('form', 'url'));
 	}
 
+	public function updateVendor($vendorId,$data){
+		$this->db->where('userId',$vendorId);
+		if( $this->db->update('vendor',$data)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function get_all_temporary_vendors()
 	{
 		$query = $this->db->get('vendortemp');

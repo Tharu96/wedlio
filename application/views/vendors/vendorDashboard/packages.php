@@ -3,111 +3,51 @@
 <?php include_once("navbar.php") ?>
 
 
+
+
 <div class="content">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-header card-header-primary">
-						<h4 class="card-title">Edit Profile</h4>
-						<p class="card-category">Complete your profile</p>
-					</div>
+    <div class="row">
 
-					<div class="card-body">
-					
-					<!-- <?php echo form_open_multipart('Vendor/vendor_profile_update'); ?> -->
-					<form method="POST" action="<?php echo base_url(); ?>index.php/Vendor/vendor_profile_update/<?php echo $userId ?>">
-					<fieldset> 
+   
 
-						
-							<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-										<label class="bmd-label-floating">First Name</label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" value="<?php echo $firstName;?>" name="firstName">
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-6">
-								<div class="form-group">
-										<label class="bmd-label-floating">Last Name</label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" value="<?php echo $lastName; ?>" name="lastName">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-								<div class="form-group">
-										<label class="bmd-label-floating"> Contact No</label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" value="<?php echo $contactNo; ?>" name="contactNo">
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-12">
-								<div class="form-group">
-										<label class="bmd-label-floating"> Address</label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" value="<?php echo $address; ?>" name="address">
-										</div>
-
-									</div>
-								</div>
-
-								<div class="col-md-12">
-								<div class="form-group">
-										<label class="bmd-label-floating">Nic</label>
-										<div class="col-md-9">
-										<input type="text" class="form-control" value="<?php echo $nic; ?>" name="nic">
-										</div>
-
-									</div>
-								</div>
-								
-							</div>
-
-							<div class="row">
-							<?php echo form_upload(['name'=>'userfile','value'=>'Save']); ?>
-        					<?php echo form_error('userfile','<div class="text-danger">', '</div>' ); ?>
-       				 		<br><hr>
-							</div>
-						
-							
-							<!-- <?php echo form_submit(['name' => 'submit', 'value' => 'Update Profile', 'class'=>'btn btn-primary pull-right']); ?> -->
-							<button type="submit" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-check"></span> Update Profile</button>
-							</fieldset>
-							</form>
-   							<?php echo form_close(''); ?>
-							<div class="clearfix"></div>
-					
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card card-profile">
-					<div class="card-avatar">
-						<a href="#pablo">
-						<img src="<?php echo base_url();?>assets/homepage/wedlio_img/<?php echo $image?>" class="rounded-circle img-fluid">
-						</a>
-					</div>
-					<div class="card-body">
-						
-						<h4 class="card-title"><?php echo $firstName?><?php echo " "?><?php echo $lastName?></h4>
-						<p class="card-description">
-						
-						</p>
-						<a href="#pablo" class="btn btn-primary btn-round">Edit</a>
-					</div>
-				</div>
-			</div>
-		</div>
+        <?php if(!empty($packages)){ foreach( $packages as $package){ ?>
+                
+                <div class="col-md-4 mb-5">
+                    <div class="card" style="width: 18rem;">
+                        <!-- <img class="card-img-top img-fluid" src="<?php echo base_url('uploads/'.$vendor->image); ?>"class="responsive"alt="Card image cap"> -->
+                        <div class="card-body">
+                        <!-- <a class="btn btn-unique btn-sm" href="<?php echo base_url(); ?>index.php/Welcome/load_vendor_Accounts/<?php echo $vendor->userId ?>"><?php echo $vendor->businessName?></a> -->
+                            <h6 class="card-category text-gray"><?php echo $package->name?></h6>
+                            <h4 class="card-title"><?php echo  $package->price?></h4>
+                            <p class="card-description">
+                                
+                            <?php
+                                
+                                $splitDes=explode(",",$package->description);
+                                foreach ($splitDes as $key => $value) {
+                                echo "* ".$value."<br>";
+                                }
+                            ?>
+                           
+                            </p>
+                            <a href="#pablo" class="btn btn-primary btn-round">Edit</a>
+                        
+                        </div>
+                    </div>
+                </div>
+        <?php }
+        }
+        else{ ?>
+        <p>Vendor not Found...</P>
+        <?php } ?>
+        </div>
+                <!--Grid column-->
+        </div>
 	</div>
 </div>
+
+
 <footer class="footer">
 	<div class="container-fluid">
 		<nav class="float-left">
@@ -215,5 +155,4 @@
 </div>
 <!--   Core JS Files   -->
 <?php include_once("footer.php") ?>
-
-
+ 

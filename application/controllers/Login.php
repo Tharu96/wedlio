@@ -10,6 +10,7 @@ class Login extends CI_Controller
 		$this->load->model('Login_model');
 		$this->load->helper('form');
 		$this->load->library('session');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
@@ -25,7 +26,7 @@ class Login extends CI_Controller
 
 	public function login_validation()
 	{
-		$this->load->library('form_validation');
+		
 
 		$hash = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 		$this->form_validation->set_rules('email', 'Email', 'required');
@@ -41,13 +42,15 @@ class Login extends CI_Controller
 			$this->load->model('Login_model');
 			$encrypted_password = $this->Login_model->can_login($email);
 			$id = $this->Login_model->getID($email);
+			$level = $this->Login_model->getuserlevel($email);
 			
 			if ($encrypted_password) {
 				if (password_verify($password, $encrypted_password)) {      //compares non hash with the hash
 					// echo 'Password is valid!';
 					$session_data = array(
 						'email' => $email,
-						'id' 	=> $id
+						'id' 	=> $id,
+						'level' => $level
 					);
 
 					$this->session->set_userdata($session_data);
@@ -55,7 +58,20 @@ class Login extends CI_Controller
 					// echo $temp;
 					$this->session->set_userdata('logged_in', true);
 					//$data['blogs'] = $this->Logmodel_c->getBlog($cusNIC);
-					$this->load->view("wedliohome");
+
+					if($level== 1){
+						$this->load->view("admin/dashboard");
+					}
+					elseif($level== 2){
+						$this->load->view("vendors/vendorDashboard/dashboard");
+					}
+
+					else
+					{
+						$this->load->view('WedlioHome');
+					}
+					
+					
 				} else {
 					echo 'Invalid password.';
 					$this->session->set_flashdata('error', 'Invalid password');
@@ -67,6 +83,8 @@ class Login extends CI_Controller
 				$this->session->set_userdata('logged_in', false);
 				$this->load->view('login');
 			}
+
+
 		} else {
 			//false  
 

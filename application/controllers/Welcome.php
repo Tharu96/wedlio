@@ -16,6 +16,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('vendors/vendorDashboard/dashboard');
 	}
 
+	public function load_vendor_Details($vendorId){
+		$this->load->model('admin_panel');
+		$vendor=$this->admin_panel->get_vendor($vendorId);
+	}
+
 	public function localVendors()
 	{
 		$this->load_all_vendor_categories();
