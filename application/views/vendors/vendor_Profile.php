@@ -174,25 +174,32 @@
                     <!--Grid column-->
                     <div class="col-lg-5 col-md-12">
                         <!-- Form contact -->
-                        <form class="p-5 grey-text">
+                        <?php if($error = $this->session->flashdata('msg')){ ?>
+                            <p style="color: green;"><strong>Success!</strong> <?php echo  $error; ?><p><?php } ?>
+                        
+                        <form class="p-5 grey-text"  method="POST" action="<?php echo base_url(); ?>index.php/vendorEmail/send/">
                             <div class="md-form form-sm"> <i class="fa fa-user prefix pink-text"></i>
-                                <input type="text" id="form3" class="form-control form-control-sm ">
+                                <input name="customerName" type="text"  class="form-control form-control-sm " required>
                                 <label for="form3">Your name</label>
                             </div>
                             <div class="md-form form-sm"> <i class="fa fa-envelope prefix pink-text"></i>
-                                <input type="text" id="form2" class="form-control form-control-sm">
+                                <input name="customerMail" type="email" class="form-control form-control-sm" required>
                                 <label for="form2">Your email</label>
                             </div>
+                            <div class="md-form form-sm"> <i class="fa fa-envelope prefix pink-text"></i>
+                                <input name="VendorMail" type="email"  class="form-control form-control-sm" >
+                                <label for="form2">To : <?php echo $vendor_details->contactEmail?> </label>
+                            </div>
                             <div class="md-form form-sm"> <i class="fa fa-tag prefix pink-text"></i>
-                                <input type="text" id="form32" class="form-control form-control-sm">
+                                <input name="subject" type="text"  class="form-control form-control-sm" required>
                                 <label for="form34">Subject</label>
                             </div>
                             <div class="md-form form-sm"> <i class="fa fa-pencil prefix pink-text"></i>
-                                <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                                <textarea name="message" type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4" required></textarea>
                                 <label for="form8">Your message</label>
                             </div>
                             <div class="text-center mt-4">
-                                <button class="btn btn-unique">Send <i class="fa fa-paper-plane-o ml-1 pink-text"></i></button>
+                                <button type="submit" class="btn btn-unique">Send <i class="fa fa-paper-plane-o ml-1 pink-text"></i></button>
                             </div>
                         </form>
                         <!-- Form contact -->

@@ -32,7 +32,7 @@
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
-        <div class="app-header__logo"><img src="<?php echo $this->config->item('base_url'); ?>/assets/img/wedlio_logo.png"  height="50" alt="mdb logo">
+        <div class="app-header__logo"><a href="<?php echo base_url(); ?>index.php"><img src="<?php echo $this->config->item('base_url'); ?>/assets/img/wedlio_logo.png"  height="50" alt="mdb logo"></a>
                 <div class="logo-src"></div>
                 <div class="header__pane ml-auto">
                     <div>
@@ -63,27 +63,8 @@
                 </span>
             </div>    <div class="app-header__content">
                 <div class="app-header-left">
-                    <div class="search-wrapper">
-                        <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="Type to search">
-                            <button class="search-icon"><span></span></button>
-                        </div>
-                        <button class="close"></button>
-                    </div>
-                    <ul class="header-menu nav">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                Statistics
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-                    </ul>        </div>
+                    
+                          </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
@@ -92,13 +73,19 @@
                                     
                                 </div>
                                
-                               <!-- adoooooooooooooooooooooo -->
+                                <?php extract($customerData); ?>
+                                
+                                <?php echo $firstName; ?>
+                                <?php echo $lastName; ?>
+				                
+			                    </li>
+			                    
                             </div>
                         </div>
                     </div>        </div>
             </div>
         </div>        <div class="ui-theme-settings">
-            <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning">
+            <!-- <button type="button" id="TooltipDemo" class="btn-open-options btn btn-warning"> -->
                 <i class="fa fa-cog fa-w-16 fa-spin fa-2x"></i>
             </button>
             <div class="theme-settings__inner">
@@ -155,13 +142,13 @@
                                     </a>
                                 </li> <br>
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
+                                    <a href="<?php echo base_url();?>index.php/Welcome/localVendors">
                                         <i class="fas fa-cannabis prefix pink-text"></i>
                                         Vendors
                                     </a>
                                 </li> <br>
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
+                                    <a href="<?php echo base_url();?>index.php/Home/Budgeter">
                                     <i class="fas fa-money-check-alt prefix pink-text"></i>
                                           Budgeter
                                     </a>
@@ -172,12 +159,7 @@
                                         Guest List
                                     </a>
                                 </li> <br>
-                                <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
-                                        <i class="fas fa-stream prefix pink-text"></i>
-                                        Wedding Day Timel ine
-                                    </a>
-                                </li> <br>
+                                
                                 <li>
                                    
                                     <a href="<?php echo base_url(); ?>index.php/customerDashboardController/customerAccountSetting/<?php echo $this->session->userdata('id'); ?>">
@@ -186,7 +168,14 @@
                                     </a>
                                 </li><br>
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
+                                <a href="<?php echo base_url(); ?>index.php">
+                                <i class="fas fa-home pink-text"></i>
+                                        Wedlio Home Page
+                                    </a>
+                                </li> <br>
+                                <li>
+
+                                    <a href="<?php echo base_url(); ?>index.php/login/logout">
                                         <i class="far fa-lightbulb prefix pink-text"></i>
                                         Logout
                                     </a>

@@ -28,7 +28,7 @@
 					<input type="number" class="form-control" value="<?php echo $numberOfGuests; ?>" name="numberOfGuests">
 				</div>
                 <div class="form-group">
-				+++	<label>Contact Number:</label>
+				<label>Contact Number:</label>
 					<input type="text" class="form-control" value="<?php echo $contactNumber; ?>" name="contactNumber">
 				</div>
 				<div class="form-group">

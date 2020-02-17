@@ -6,17 +6,17 @@
   <!-- Your custom styles (optional) -->
   <link href="<?php echo base_url();?>assets/homepage/css/style.css" rel="stylesheet">
 </head>
+<?php extract($weddingData); ?>
+<?php extract($customerData); ?>
+                                
 
 
             <!--Section: Contact-->
             <section id="contact" style="background-color: #eee;">
 
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center"> Welcome Back Kasun. 283 Days To Go!</h2>
-                <p><?php echo  $this->session->userdata('email'); ?></p>
-                <p><?php echo  $this->session->userdata('id'); ?></p>
+                <h2 class="mb-5 font-weight-bold text-center"> Welcome Back <?php echo $firstName; ?> </h2>
 
-               
 
 
                 <!--Grid row-->
@@ -44,11 +44,11 @@
                   
                         <form class="p-5 grey-text">
                             <div class="md-form form-sm"> <i class="fas fa-map-marker-alt prefix pink-text"></i> 
-                                <input type="text" id="form3" class="form-control form-control-sm " value="Location">
+                                <input type="text" id="form3" class="form-control form-control-sm " value=<?php echo $weddingDistrict; ?>,<?php echo $weddingCity; ?>>
                 
                             </div>
                             <div class="md-form form-sm"> <i class="far fa-calendar-alt prefix pink-text"></i> 
-                                <input type="text" id="form2" class="form-control form-control-sm" value="Wedding Date">
+                                <input type="text" id="form2" class="form-control form-control-sm" value=<?php echo $weddingDate; ?>>
                                 
                             </div>
                         </form>

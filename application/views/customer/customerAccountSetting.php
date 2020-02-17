@@ -14,11 +14,13 @@
 
 <div class="m-5">
     <h2><b>Update Account</b></h2>
-<?php extract($accountData); ?>
-<?php echo $nic; ?>
+<?php extract($customerData); ?>
+<?php extract($userData); ?>
+
+
     <hr>
 
-    <form onSubmit="return validate()" action="<?php echo base_url(); ?>index.php/updateCustomerController/updateAccount/<?php echo  $this->session->userdata('id'); ?>" method="post"
+    <form onSubmit="return validate()" action="<?php echo base_url(); ?>index.php/updateCustomerController/updateAccount" method="post"
         enctype="multipart/form-data" id="customerRegistration-form">
 
         <div class="form-row">
@@ -51,7 +53,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputcontactNo">Contact No</label>
-                <input type="text" class="form-control" name="contactno" value="<?php echo $contactNo; ?>" placeholder="Contact Number">
+                <input type="text" class="form-control" name="contactno" value="<?php echo $contactNo; ?>" >
             </div>
         </div>
 
@@ -72,23 +74,23 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-5 col-md-12" style="background-color: #eee;">
                 <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/<?php echo $image?>" alt="Customer Photo" class="img-responsive" >
             </div>
-        </div><br>
+        </div><br> -->
 
-        <div class="form-row">
+        <!-- <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputAddress">Image</label>
                 <input type="file" class="form-control" name="image" id="inputimage" placeholder=" select image">
             </div>
-        </div>
+        </div> -->
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+                <input type="email" class="form-control" name="email" id="inputEmail4" value="<?php echo $email; ?>">
             </div>
         </div>
 
@@ -100,19 +102,19 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputpassword1">Current Password</label>
-                <input type="password" class="form-control" name="password" id="inputpassword" placeholder="Password">
+                <input type="password" class="form-control" name="password"  placeholder="Current Password">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputpassword1">New Password</label>
-                <input type="password" class="form-control" name="password" id="inputpassword" placeholder="Password">
+                <input type="password" class="form-control" name="newPassword"  placeholder="New Password">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputpassword1">Confirm Password</label>
-                <input type="password" class="form-control" name="password" id="inputpassword" placeholder="Password">
+                <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
             </div>
         </div>
         <div class="form-row">

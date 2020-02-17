@@ -10,8 +10,10 @@ class updateCustomerController extends CI_Controller {
 	}
 
     	public function updateCustomer($id){
-    	$data['customerData'] = $this->getCustomerDataModel->getWeddingData($id);
-		$this->load->view("customer/customerDashboardHeader");
+		$data['weddingData'] = $this->getCustomerDataModel->getWeddingData($id);
+		$data['customerData'] = $this->getCustomerDataModel->getAccountData($id);
+		
+		$this->load->view("customer/customerDashboardHeader",$data);
 		
         $this->load->view('customer/updateCustomer',$data);
 	}
@@ -28,8 +30,13 @@ class updateCustomerController extends CI_Controller {
 
 		if($query){
 			header('location:'.$this->updateCustomer($id));
+			}
 		}
-}
+
+		public function updateAccount(){
+
+			$uid = $this->session->userdata('id');
+		}
 
 }
  
