@@ -11,11 +11,41 @@
 <body>
     <?php include_once("navbar.php") ?>
 
+   
+
+<div id="slideshow" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+              
+    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/homepage/wedlio_img/floraheader.jpg" alt="First slide " class="responsive"
+        style="background-repeat: no-repeat; 
+						
+							background-position: center;
+							background-size:cover;">
+    </div>
+    <div class="carousel-item">
+    <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/floraheader.jpg" alt="First slide " class="responsive"
+        style="background-repeat: no-repeat; 
+						
+							background-position: center;
+							background-size:cover;">
+    </div>
+    <div class="carousel-item">
+    <img class="d-block w-100" src="<?php echo base_url();?>assets/homepage/wedlio_img/floraheader.jpg" alt="First slide " class="responsive"
+        style="background-repeat: no-repeat; 
+						
+							background-position: center;
+							background-size:cover;">
+    </div>
+
+  </div> <!-- carousel-inner -->
+</div> <!-- slideshow -->
+
     <div class="flex-container" style="min-height:100%; position:relative;">
         <div class="row">
 
             <div class="card " style="margin: 0 auto; float: none; margin-bottom: 10px; width: 800px;">
-                <img class="card-img-top" src="<?php echo base_url();?>assets/img/vendorpref1.jpg" alt="Card image cap">
+                <!-- <img class="card-img-top" src="<?php echo base_url();?>assets/img/vendorpref1.jpg" alt="Card image cap"> -->
                 <div class="card-body">
                     <div class="row">
                         <div class="card-body">
@@ -82,7 +112,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary btn-block">
+                                                    <button type="submit" class="btn btn-primary btn-sm btn-block">
                                                         Submit</button>
                                                 </div>
                                             </form>
