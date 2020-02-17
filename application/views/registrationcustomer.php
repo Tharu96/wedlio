@@ -20,24 +20,24 @@
     <p>Thank you for considering us to be your service provider.</p>
     <hr>
     <form onSubmit="return validate()" action="<?php echo base_url('index.php/customer/add_customer'); ?>" method="post"
-        enctype="multipart/form-data" id="customerRegistration-form">
+        enctype="multipart/form-data" >
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputfirstname">First Name</label>
-                <input type="text" class="form-control" name="firstname" id="inputfirstname" placeholder="First Name"
+                <input type="text" class="form-control" name="firstname"  placeholder="First Name"
                     value="<?php echo set_value('firstname'); ?>" size="50">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputlastName">Last Name</label>
-                <input type="text" class="form-control" name="lastname" id="inputlastName" placeholder="Last Name"
+                <input type="text" class="form-control" name="lastname"  placeholder="Last Name"
                     value="<?php echo set_value('lastname'); ?>">
             </div>
         </div>
         <div class=" form-row">
             <div class="form-group col-md-6">
                 <label for="inputNIC">NIC</label>
-                <input type="text" class="form-control" name="nic" id="inputNIC" placeholder="966592010v">
+                <input type="text" class="form-control" name="nic" id="inputNIC" placeholder="NIC Number">
             </div>
             <div class="form-group col-md-6">
                 <label for="dob">Date of Birth</label>

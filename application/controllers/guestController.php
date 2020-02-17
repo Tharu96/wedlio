@@ -11,13 +11,19 @@ class guestController extends CI_Controller {
 	}
  
 	public function showGuestList(){
-		$this->load->view("customer/customerDashboardHeader");
+		$uid = $this->session->userdata('id');
+		$data['customerData'] = $this->getCustomerDataModel->getAccountData($uid);
+		$data['weddingData'] = $this->getCustomerDataModel->getWeddingData($uid);
+		$this->load->view("customer/customerDashboardHeader",$data);
 		$data['guestArray'] = $this->guestModel->getAllGuests();
         $this->load->view('customer/guestList/guestList', $data);
 	}
  
 	public function addGuest(){
-		$this->load->view("customer/customerDashboardHeader");
+		$uid = $this->session->userdata('id');
+		$data['customerData'] = $this->getCustomerDataModel->getAccountData($uid);
+		$data['weddingData'] = $this->getCustomerDataModel->getWeddingData($uid);
+		$this->load->view("customer/customerDashboardHeader",$data);
 		$this->load->view('customer/guestList/addGuest');
 	}
  
@@ -40,7 +46,10 @@ class guestController extends CI_Controller {
  
 	public function editGuest($gid){
 		$data['guest'] = $this->guestModel->getGuest($gid);
-		$this->load->view("customer/customerDashboardHeader");
+		$uid = $this->session->userdata('id');
+		$data['customerData'] = $this->getCustomerDataModel->getAccountData($uid);
+		$data['weddingData'] = $this->getCustomerDataModel->getWeddingData($uid);
+		$this->load->view("customer/customerDashboardHeader",$data);;
 		$this->load->view('customer/guestList/updateGuest', $data);
 	}
  
@@ -74,7 +83,7 @@ class guestController extends CI_Controller {
 		$data['customerData'] = $this->getCustomerDataModel->getAccountData($uid);
 		$data['userData'] = $this->getCustomerDataModel->getUserData($uid);
 
-		$this->load->view("customer/customerDashboardHeader");
+		$this->load->view("customer/customerDashboardHeader",$data);
 		$this->load->view('customer/guestList/sendMail',$data);	
 	}
 

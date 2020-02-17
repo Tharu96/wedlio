@@ -1,9 +1,10 @@
 
 <h3>Your Wedding Details</h3>
 <br><br>
-<p><?php echo  $this->session->userdata('id'); ?></p>
+
 <?php extract($customerData); ?>
-<?php echo $weddingDistrict; ?>
+<?php extract($weddingData); ?>
+
 
 
 <form method="POST" action="<?php echo base_url(); ?>index.php/updateCustomerController/update/<?php echo  $this->session->userdata('id'); ?>">

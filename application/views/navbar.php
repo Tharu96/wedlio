@@ -40,22 +40,22 @@
 
             <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==1) : ?>
 				<li class="nav-item">
-                <a href="<?php echo base_url(); ?>index.php/admin" class="nav-link pink-text"
-                    role="button">Dashboard</a>
+                <a href="<?php echo base_url(); ?>index.php/admin" class="nav-link black-text"
+                    role="button">ADMIN DASHBOARD</a>
             </li>
 			<?php endif; ?>
 
             <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==2) : ?>
 				<li class="nav-item">
-                <a href="<?php echo base_url(); ?>index.php/welcome/vendorDashboard" class="nav-link pink-text"
-                    role="button">Dashboard</a>
+                <a href="<?php echo base_url(); ?>index.php/welcome/vendorDashboard" class="nav-link black-text"
+                    role="button">VENDOR DASHBOARD</a>
             </li>
 			<?php endif; ?>
 
             <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==3) : ?>
 				<li class="nav-item">
-                <a href="<?php echo base_url(); ?>index.php/Home/customerDashboard" class="nav-link pink-text"
-                    role="button">Dashboard</a>
+                <a href="<?php echo base_url(); ?>index.php/Home/customerDashboard" class="nav-link black-text"
+                    role="button">CUSTOMER DASHBOARD</a>
             </li>
 			<?php endif; ?>
 
@@ -63,7 +63,7 @@
         </ul>
         <ul class="navbar-nav ml-auto font-weight-bold">
             <li class="nav-item ">
-                <p><?php echo  $this->session->userdata('email'); ?>
+            <a href="#" class="nav-link black-text" role="button"><?php echo  $this->session->userdata('email'); ?></a>
             </li>
             <?php if ($this->session->userdata('logged_in') == false) : ?>
             <li class="nav-item">

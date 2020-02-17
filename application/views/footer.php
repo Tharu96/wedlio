@@ -18,7 +18,7 @@
           <p>warnasiri1996@gmail.com
           <br/>chethaniwanigasekara@gmail.com
 
-          <br/>kasunharshana@gmail.com
+          <br/>khguruge@gmail.com
 
           <br/>076 9319680</p>
           </div>

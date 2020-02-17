@@ -11,6 +11,7 @@ class Login extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('session');
 		$this->load->library('form_validation');
+		$this->load->model('getCustomerDataModel');
 	}
 
 	public function index()
@@ -51,7 +52,6 @@ class Login extends CI_Controller
 					// echo 'Password is valid!';
 					$session_data = array(
 						'email' => $email,
-
 						'id' 	=> $id,
 						'level' => $level
 
@@ -72,7 +72,11 @@ class Login extends CI_Controller
 
 					else
 					{
-						$this->load->view('WedlioHome');
+						$uid = $this->session->userdata('id');
+						$data['customerData'] = $this->getCustomerDataModel->getAccountData($uid);
+						$data['weddingData'] = $this->getCustomerDataModel->getWeddingData($uid);
+						$this->load->view("customer/customerDashboardHeader", $data);
+						$this->load->view("customer/customerDashboard", $data );
 					}
 					
 					
