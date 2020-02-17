@@ -25,8 +25,16 @@ class Preferences extends CI_Controller {
 
         $insert = $this->Preferences_model->add_photopreference( $photopref );
         $match['packages'] = $this->Preferences_model->photofilter( $photopref['price'] );
-        echo 'preference added';
-        echo json_encode( array( 'status' => TRUE ) );
+
+        // $this->load->model( 'admin_panel' );
+        
+        // foreach($match as $package):
+        //     $vendorId=$package['userId'];
+        //     $vendorNames['vendorNames']=$this->admin_panel->get_vendor_name( $vendorId );
+        // endforeach;
+        // print_r(vendorNames);
+        
+        // echo json_encode( array( 'status' => TRUE ) );
         $this->load->view( 'generatedpackages', $match );
     }
 

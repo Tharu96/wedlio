@@ -109,7 +109,8 @@ class Vendor extends CI_Controller
 			 	unset($data['submit']);
 				$this->load->model('vendor_model');
 				if($this->vendor_model->updateVendor($userId,$data)){
-					echo 'Vendor Details updated Successfully';
+					$this->session->set_flashdata('error', 'Update Successfullly');
+					
 				}
 				else{
 				  echo 'Failed to update Vendor Details';
@@ -222,10 +223,10 @@ class Vendor extends CI_Controller
 
 		$vendordata = array(
 			'userId' => $nextVenId,
-			'businessName' => $tempVendor->businessname,
+			'businessName' => $tempVendor->businessName,
 			'businessDescription' => $tempVendor->businessDescription,
 			'companyWebsite' => $tempVendor->companyWebsite,
-			'companyAddress' => $tempVendor->companyAddress,
+			'companyAddress' => $tempVendor->companyAddress	,
 			'district' => $tempVendor->district,
 			'businessContactNo' => $tempVendor->businessContactNo,
 			'companyDescription' => $tempVendor->companyDescription,

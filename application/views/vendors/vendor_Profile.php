@@ -95,7 +95,7 @@
                 <div class="testimonial">
                     <!--Avatar-->
                     <div class="avatar mx-auto mb-4">
-                        <img src="<?php echo base_url();?>assets/homepage/wedlio_img/<?php echo $vendor_details->DpPath?>" class="rounded-circle img-fluid"
+                        <img src="<?php echo base_url();?>assets/homepage/wedlio_img/<?php echo $vendor_details->DpPath?>" height="200" width="200" class="rounded-circle img-fluid"
                             alt="First sample avatar image">
                     </div>
                     <!--Content-->

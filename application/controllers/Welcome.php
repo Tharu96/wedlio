@@ -57,6 +57,9 @@ class Welcome extends CI_Controller {
 
 		$vendor_category=$this->admin_panel->get_categoryId($vendorId);
 
+		if($vendor_category==6){
+			$table_Name='photopackages';
+		}
 		if($vendor_category==7){
 			$table_Name='photopackages';
 		}

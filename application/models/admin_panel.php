@@ -78,6 +78,22 @@
         }
 
         
+        public function get_vendor_name($vendorId){
+
+            $this->db->select('businessName');
+            $this->db->from('vendor');
+            $this->db->where('userId',$vendorId);
+            $row = $this->db->get()->row();
+            if (isset($row)) {
+                return $row->businessName;
+    
+            } else {
+                return false;
+            }	
+           
+        }
+
+        
 
         public function get_packages($vendorId,$table_Name){
 
