@@ -8,15 +8,112 @@ class Vendor extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('vendor_model');
+		$this->load->model('Customer_model');
 		$this->load->library('upload');
 		$this->load->helper(array('form', 'url'));
 	}
 
 	public function index()
-	{
-		$this->load->view('vendors/vendorDashboard/dashboard');
+	{	$userId=$this->session->userdata('id');
+		$data=$this->Customer_model->load_all_customer_requests($userId);
+		$this->load->view("vendors/vendorDashboard/dashboard",['customerRequests'=>$data]);
+	
 	}
 
+	public function add_packages(){
+		$this->form_validation->set_rules('name','Package Name','required');
+		$this->form_validation->set_rules('price','Package Price','required');
+		$this->form_validation->set_rules('description','Description','required');
+
+		
+		if($this->form_validation->run()){
+
+			$data=array(
+				"userId"=>$this->session->userdata('id'),
+				"name" =>$this->input->post("name"),
+				"price"=>$this->input->post("price"),
+				"description" =>$this->input->post("description")
+			);
+			
+			 	unset($data['submit']);
+				$this->load->model('vendor_model');
+				if($this->vendor_model->add_packages($data)){
+					echo 'New Vendor Package added Successfully';
+				}
+				else{
+				  echo 'New Vendor Package added Successfully';
+				}
+				exit();
+			
+		}else{
+		  $this->add_packages();
+	  	}
+
+	}
+
+
+	public function edit_packages($pkgId){
+		$this->load->model('vendor_model');
+		$data['package']=$this->vendor_model->get_packages($pkgId);
+		$this->load->view("vendors/vendorDashboard/editPackages",$data);
+	}
+	
+	public function delete_packages($pkgId){
+		$this->load->model('vendor_model');
+		$this->vendor_model->delete_packages($pkgId);
+		
+	}
+	
+
+
+
+	public function send_email_to_customer(){
+		$vendorId=$this->session->userdata('id');
+		$this->load->model('admin_panel');
+		$businessName=$this->admin_panel->get_vendor_name($vendorId);
+
+		$to =  $this->input->post('custEmail');  // User email pass here
+		$subject =$businessName ;
+		
+
+		$from = $this->session->userdata('email');             // Pass here your mail id
+
+		$emailContent = '<!DOCTYPE><html><head></head><body>';
+
+		$emailContent .= $this->input->post('message');  //   Post message available here
+
+		$emailContent .= "</body></html>";
+					
+
+
+		$config['protocol']    = 'smtp';
+		$config['smtp_host']    = 'ssl://smtp.gmail.com';
+		$config['smtp_port']    = '465';
+		$config['smtp_timeout'] = '60';
+
+		$config['smtp_user']    = 'wedlioweddingplanners@gmail.com';    //Important
+		$config['smtp_pass']    = '123!@#qwe';  //Important
+
+		$config['charset']    = 'utf-8';
+		$config['newline']    = "\r\n";
+		$config['mailtype'] = 'html'; // or html
+		$config['validation'] = TRUE; // bool whether to validate email or not 
+
+		
+
+		$this->email->initialize($config);
+		$this->email->set_mailtype("html");
+		$this->email->from($from);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		$this->email->message($emailContent);
+		$this->email->send();
+
+		$this->session->set_flashdata('msg',"Mail has been sent successfully");
+		$this->session->set_flashdata('msg_class','alert-success');
+		return redirect($this->agent->referrer());
+	
+	}
 	public function dashboard_vendor_details()
 	{
 		$userId=$this->session->userdata('id');
@@ -226,14 +323,13 @@ class Vendor extends CI_Controller
 			'businessName' => $tempVendor->businessName,
 			'businessDescription' => $tempVendor->businessDescription,
 			'companyWebsite' => $tempVendor->companyWebsite,
-			'companyAddress' => $tempVendor->companyAddress	,
+			'companyAddress' => $tempVendor->businessAddress	,
 			'district' => $tempVendor->district,
 			'businessContactNo' => $tempVendor->businessContactNo,
 			'companyDescription' => $tempVendor->companyDescription,
 			'firstName' => $tempVendor->firstName,
 			'lastName' => $tempVendor->lastName,
 			'contactEmail' => $tempVendor->contactEmail,
-			'nic' => $tempVendor->nic,
 			'contactNo' => $tempVendor->contactNo,
 			'createdAt' => $tempVendor->createdAt
 		);

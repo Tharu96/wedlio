@@ -9,6 +9,27 @@ class Vendor_model extends CI_Model
 		$this->load->helper(array('form', 'url'));
 	}
 
+	public function add_packages($data)
+	{
+		$this->db->insert('photopackages', $data);
+		
+		
+	}
+
+	public function get_packages($pkgId){
+
+		$query=$this->db->get_where('photopackages',array('pkgId'=>$pkgId));
+		if($query-> num_rows()>0){
+			return $query->result();
+		}
+ }
+
+
+	public function delete_packages($pkgId){
+		$this->db->where('pkgId', $pkgId);
+		$this->db->delete('photopackages');
+	}
+
 	public function updateVendor($vendorId,$data){
 		$this->db->where('userId',$vendorId);
 		if( $this->db->update('vendor',$data)){
@@ -17,6 +38,7 @@ class Vendor_model extends CI_Model
 			return false;
 		}
 	}
+	
 
 	public function get_all_temporary_vendors()
 	{

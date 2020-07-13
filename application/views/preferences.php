@@ -52,10 +52,10 @@
               <a class="nav-link" href="<?php echo base_url(); ?>index.php/preferences/photography" role="tab" aria-controls="photography" aria-selected="true">Wedding Photography</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"  href="<?php echo base_url(); ?>index.php/preferences/receptions" role="tab" aria-controls="history" aria-selected="false">Reception Halls</a>
+              <a class="nav-link" href="<?php echo base_url(); ?>index.php/preferences/florists" role="tab" aria-controls="deals" aria-selected="false">Florists</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url(); ?>index.php/preferences/florists" role="tab" aria-controls="deals" aria-selected="false">Florists</a>
+              <a class="nav-link"  href="<?php echo base_url(); ?>index.php/preferences/receptions" role="tab" aria-controls="history" aria-selected="false">Reception Halls</a>
             </li>
 			<li class="nav-item">
               <a class="nav-link" href="<?php echo base_url(); ?>index.php/preferences/photography" role="tab" aria-controls="deals" aria-selected="false">Dj's and Bands</a>

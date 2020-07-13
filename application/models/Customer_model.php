@@ -27,6 +27,19 @@ class Customer_model extends CI_Model
 		$query = $this->db->get_where('customer', array('userId' => $userId));
 		return $query->row();
 	}
+	
+	public function get_user($userId)
+	{
+
+		$this->db->where('userId',$userId);
+		$customer=$this->db->get("user");
+		if($customer)
+		{
+			return $customer->row(0);
+		}else{
+			return false;
+		}
+	}
 
 	public function get_all_customers()
 	{
@@ -34,6 +47,23 @@ class Customer_model extends CI_Model
 		return $query;
 	}
 
+	public function add_customer_requests($data){
+		$this->db->insert('customerrequests',$data);
+		
+	}
+
+	public function get_wedding_detail($customerId){
+		$query=$this->db->get_where('weddingdetails', array('userId' => $customerId));
+		return $query->row();
+	}
+
+	public function load_all_customer_requests($vendorId){
+		$this->db->where('vendorId',$vendorId);
+            $customerrequests=$this->db->get("customerrequests");
+            if($customerrequests-> num_rows()>0){
+                return $customerrequests->result();
+            }
+	}
 
 	public function getLastCusId()
 	{

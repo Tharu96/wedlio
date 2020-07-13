@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="card-body">
-                            <h4 class="card-title">Top Wedding Photographer for your selction</h4>
+                            <h4 class="card-title">Top Wedding Vendors for your selction</h4>
                             <h6 class="card-subtitle mb-2">Find and book the best wedding vendors with help from The
                                 Wedlio.</h6>
                             <p class="card-text">Remember that every vendor is unique and that no two wedding

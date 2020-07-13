@@ -60,10 +60,10 @@ class Preferences extends CI_Controller {
             'description' => $this->input->post( 'description' )
         );
         $insert = $this->Preferences_model->add_floristpreference( $floristpref );
-        $match['packages'] = $this->Preferences_model->receptionfilter( $floristpref['price'] );
-        echo 'preference added';
-        echo json_encode( array( 'status' => TRUE ) );
-        $this->load->view( 'generatedpackages/florists', $match );
+        $match['packages'] = $this->Preferences_model->floristfilter( $floristpref['price'] );
+        
+        
+        $this->load->view( 'generatedpackages', $match );
     }
 
     public function djandband() {

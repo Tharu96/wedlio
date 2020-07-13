@@ -29,7 +29,7 @@
                     <span style="float:right;">
                     <a href="<?php echo base_url(); ?>index.php/updateCustomerController/updateCustomer/<?php echo $this->session->userdata('id'); ?>" >UPDATE</a></span></p></h3>
                     <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
+                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/homepage/wedlio_img/danukadp.jpg" 
                         alt="First slide">
                     </div>
                     </div>

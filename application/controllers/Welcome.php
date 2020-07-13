@@ -52,6 +52,12 @@ class Welcome extends CI_Controller {
 	}
 
 	public function load_vendor_Accounts($vendorId){
+		$userId=$this->session->userdata('id');
+		$cusEmail=$this->session->userdata('email');
+
+		$this->load->model('Customer_model');
+		$customer=$this->Customer_model->get_customer($userId);
+
 		$this->load->model('admin_panel');
 		$vendor=$this->admin_panel->get_vendor($vendorId);
 
@@ -72,8 +78,19 @@ class Welcome extends CI_Controller {
 		$packages=$this->admin_panel->get_packages($vendorId,$table_Name);
 		$data["vendor_details"]=$vendor;
 		$data["vendor_packages"]=$packages;
+		$data['customer']=$customer;
+		$data['email']=$cusEmail;
+		
 		$this->load->view('vendors/vendor_Profile',$data);
 		
+	}
+
+	public function send_mails_to_customers($customerId){
+	
+		$this->load->model('Customer_model');
+		$customer=$this->Customer_model->get_user($customerId);
+		$this->load->view('vendors/vendorDashboard/sendMail',$customer);
+
 	}
 
 

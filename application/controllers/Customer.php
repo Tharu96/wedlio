@@ -98,6 +98,8 @@ class Customer extends CI_Controller {
         $this->load->view( 'admin/viewallcustomers', $data );
     }
 
+  
+
     public function getNextCusId() {
         $lastId = $this->Customer_model->getLastCusId();
         $lastId = substr( $lastId, -3 );

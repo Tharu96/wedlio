@@ -177,18 +177,18 @@
                         <?php if($error = $this->session->flashdata('msg')){ ?>
                             <p style="color: green;"><strong>Success!</strong> <?php echo  $error; ?><p><?php } ?>
                         
-                        <form class="p-5 grey-text"  method="POST" action="<?php echo base_url(); ?>index.php/vendorEmail/send/">
+                        <form class="p-5 grey-text"  method="POST" action="<?php echo base_url(); ?>index.php/vendorEmail/send/<?php echo $vendor_details->userId?>">
                             <div class="md-form form-sm"> <i class="fa fa-user prefix pink-text"></i>
-                                <input name="customerName" type="text"  class="form-control form-control-sm " required>
-                                <label for="form3">Your name</label>
+                                <input name="customerName" type="text"  class="form-control form-control-sm "value="<?php echo $customer->firstName?><?php echo " "?> <?php echo $customer->lastName?>" required>
+                                <label for="form3">Your Name</label>
                             </div>
                             <div class="md-form form-sm"> <i class="fa fa-envelope prefix pink-text"></i>
-                                <input name="customerMail" type="email" class="form-control form-control-sm" required>
-                                <label for="form2">Your email</label>
+                                <input name="customerMail" type="email" class="form-control form-control-sm" value="<?php echo $email?>" required>
+                                <label for="form2">Your Mail</label>
                             </div>
                             <div class="md-form form-sm"> <i class="fa fa-envelope prefix pink-text"></i>
-                                <input name="VendorMail" type="email"  class="form-control form-control-sm" >
-                                <label for="form2">To : <?php echo $vendor_details->contactEmail?> </label>
+                                <input name="VendorMail" type="email"  class="form-control form-control-sm"value=" <?php echo $vendor_details->contactEmail?>" >
+                                <label for="form2">To : </label>
                             </div>
                             <div class="md-form form-sm"> <i class="fa fa-tag prefix pink-text"></i>
                                 <input name="subject" type="text"  class="form-control form-control-sm" required>

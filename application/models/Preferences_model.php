@@ -98,7 +98,7 @@ class preferences_model extends CI_Model
 
 	public function floristfilter($price){
 		$this->db->select('*');
-		$this->db->from('floristpackages');
+		$this->db->from('florapackages');
 		$this->db->where('price <= ', $price);
 		$this->db->order_by('price','DESC');
 		$this->db->limit(3);

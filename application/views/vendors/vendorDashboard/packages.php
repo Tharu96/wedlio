@@ -8,12 +8,11 @@
 <div class="content">
 	<div class="container-fluid">
     <div class="row">
-
-   
+		<div class="col-md-4">
 
         <?php if(!empty($packages)){ foreach( $packages as $package){ ?>
                 
-                <div class="col-md-4 mb-5">
+                <div class="col-md-8 mb-5">
                     <div class="card" style="width: 18rem;">
                         <!-- <img class="card-img-top img-fluid" src="<?php echo base_url('uploads/'.$vendor->image); ?>"class="responsive"alt="Card image cap"> -->
                         <div class="card-body">
@@ -31,7 +30,8 @@
                             ?>
                            
                             </p>
-                            <a href="#pablo" class="btn btn-primary btn-round">Edit</a>
+                            <a href="<?php echo base_url(); ?>index.php/Vendor/edit_packages/<?php echo $package->pkgId ?>" class="btn btn-primary btn-round">Edit</a>
+							<a href="<?php echo base_url(); ?>index.php/Vendor/delete_packages/<?php echo $package->pkgId ?>" class="btn btn-primary btn-round" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
                         
                         </div>
                     </div>
@@ -43,7 +43,65 @@
         <?php } ?>
         </div>
                 <!--Grid column-->
-        </div>
+        
+
+		<div class="col-md-8">
+                        <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Add Packages</h4>
+                            <p class="card-category"></p>
+                        </div>
+
+                        <div class="card-body">
+                        
+                        
+                        <form method="POST" action="<?php echo base_url(); ?>index.php/Vendor/add_packages">
+                        <fieldset> 
+
+                        
+                            <div class="row">
+                                <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Package Name</label>
+                                    <div class="col-md-9">
+                                    <input type="text" class="form-control" value="" name="name">
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Package Price</label>
+                                    <div class="col-md-9">
+                                    <input type="text" class="form-control" name="price" required>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+							<div class="row">
+                                <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Description</label>
+                                    <div class="col-md-9">
+                                    <input type="text" class="form-control" name="description" required>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+							      
+
+                            <button type="submit" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-check"></span>Add Package</button>
+                            </fieldset>
+                            </form>
+                                <?php echo form_close(''); ?>
+                            <div class="clearfix"></div>
+                        
+                        </div>
+                        </div>
+		</div>
 	</div>
 </div>
 

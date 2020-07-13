@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class vendorEmail extends CI_Controller {
 
 	
-    public function send()
+    public function send($vendorId)
 {
-    $to =  'gkasunharshana@gmail.com';  // User email pass here
+    $to =  'warnasiri1996@gmail.com ';  // User email pass here
     $subject = 'Wedlio Customer Requests';
 
     $from = 'wedlioweddingplanners@gmail.com';              // Pass here your mail id
@@ -59,6 +59,23 @@ class vendorEmail extends CI_Controller {
 
     $this->session->set_flashdata('msg',"Mail has been sent successfully");
     $this->session->set_flashdata('msg_class','alert-success');
+
+    $customerId=$this->session->userdata('id');
+    $cusEmail=$this->session->userdata('email');
+    $this->load->model('Customer_model');
+    $customer=$this->Customer_model->get_customer($customerId);
+    $weddingDetails=$this->Customer_model->get_wedding_detail($customerId);
+
+    $data['customerId']=$customerId;
+    $data['vendorId']=$vendorId;
+    $data['firstName']=$customer->firstName;
+    $data['lastName']=$customer->lastName;
+    $data['email']=$cusEmail;
+    $data['weddingDate']=$weddingDetails->weddingDate;
+    $data['weddingLocation']=$weddingDetails->weddingDistrict;
+
+    $this->Customer_model->add_customer_requests($data);
+
     return redirect($this->agent->referrer());
 }
 

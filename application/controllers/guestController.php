@@ -87,48 +87,47 @@ class guestController extends CI_Controller {
 		$this->load->view('customer/guestList/sendMail',$data);	
 	}
 
-	public function send()
-{
-    $to =  $this->input->post('from');  // User email pass here
-    $subject = 'Wedlio Invitations';
+	public function send(){
+		$to =  $this->input->post('from');  // User email pass here
+		$subject = 'Wedlio Invitations';
 
-    $from = 'wedlioweddingplanners@gmail.com';              // Pass here your mail id
+		$from = 'wedlioweddingplanners@gmail.com';              // Pass here your mail id
 
-    $emailContent = '<!DOCTYPE><html><head></head><body>';
+		$emailContent = '<!DOCTYPE><html><head></head><body>';
 
-    $emailContent .= $this->input->post('message');  //   Post message available here
+		$emailContent .= $this->input->post('message');  //   Post message available here
 
-    $emailContent .= "</body></html>";
-                
+		$emailContent .= "</body></html>";
+					
 
 
-    $config['protocol']    = 'smtp';
-    $config['smtp_host']    = 'ssl://smtp.gmail.com';
-    $config['smtp_port']    = '465';
-    $config['smtp_timeout'] = '60';
+		$config['protocol']    = 'smtp';
+		$config['smtp_host']    = 'ssl://smtp.gmail.com';
+		$config['smtp_port']    = '465';
+		$config['smtp_timeout'] = '60';
 
-    $config['smtp_user']    = 'wedlioweddingplanners@gmail.com';    //Important
-    $config['smtp_pass']    = '123!@#qwe';  //Important
+		$config['smtp_user']    = 'wedlioweddingplanners@gmail.com';    //Important
+		$config['smtp_pass']    = '123!@#qwe';  //Important
 
-    $config['charset']    = 'utf-8';
-    $config['newline']    = "\r\n";
-    $config['mailtype'] = 'html'; // or html
-    $config['validation'] = TRUE; // bool whether to validate email or not 
+		$config['charset']    = 'utf-8';
+		$config['newline']    = "\r\n";
+		$config['mailtype'] = 'html'; // or html
+		$config['validation'] = TRUE; // bool whether to validate email or not 
 
-     
+		
 
-    $this->email->initialize($config);
-    $this->email->set_mailtype("html");
-    $this->email->from($from);
-    $this->email->to($to);
-    $this->email->subject($subject);
-    $this->email->message($emailContent);
-    $this->email->send();
+		$this->email->initialize($config);
+		$this->email->set_mailtype("html");
+		$this->email->from($from);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		$this->email->message($emailContent);
+		$this->email->send();
 
-    $this->session->set_flashdata('msg',"Mail has been sent successfully");
-    $this->session->set_flashdata('msg_class','alert-success');
-    return redirect($this->agent->referrer());
-}
+		$this->session->set_flashdata('msg',"Mail has been sent successfully");
+		$this->session->set_flashdata('msg_class','alert-success');
+		return redirect($this->agent->referrer());
+	}
 
 
 }

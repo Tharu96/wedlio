@@ -20,23 +20,23 @@
                 <?php echo anchor('Welcome/localVendors', 'LOCAL VENDORS', ['class' => 'nav-link']); ?>
             </li>
            
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">BUDGETER
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Another action</a> -->
+                    <!-- <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-            </li>
+            </li> -->
 
-			<?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==3) : ?>
+			<!-- <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==3) : ?>
 				<li class="nav-item">
                 <a href="<?php echo base_url(); ?>index.php/preferences/" class="nav-link pink-text"
                     role="button">Recomendations</a>
             </li>
-			<?php endif; ?>
+			<?php endif; ?> -->
 
             <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==1) : ?>
 				<li class="nav-item">
@@ -47,7 +47,7 @@
 
             <?php if ($this->session->userdata('logged_in') == True && $this->session->userdata('level')==2) : ?>
 				<li class="nav-item">
-                <a href="<?php echo base_url(); ?>index.php/welcome/vendorDashboard" class="nav-link black-text"
+                <a href="<?php echo base_url(); ?>index.php/vendor" class="nav-link black-text"
                     role="button">VENDOR DASHBOARD</a>
             </li>
 			<?php endif; ?>

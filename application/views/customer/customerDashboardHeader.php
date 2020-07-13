@@ -136,7 +136,7 @@
                                 </li> <br>
 
                                 <li>
-                                    <a href="<?php echo base_url();?>index.php/main/index">
+                                    <a href="<?php echo base_url(); ?>index.php/preferences/">
                                     <i class="fas fa-tasks prefix pink-text"></i>
                                           Check List
                                     </a>

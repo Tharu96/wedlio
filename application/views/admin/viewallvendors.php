@@ -145,7 +145,7 @@
                                         <td>
                                             <p style="margin:0;">
                                                 <a
-                                                    href="<?php echo base_url(); ?>/index.php/vendor/add_vendor/<?php echo $row->tempId ?>">
+                                                    href="<?php echo base_url(); ?>index.php/vendor/add_vendor/<?php echo $row->tempId ?>">
                                                     <button type="button" class="btn btn-outline-secondary btn-sm"
                                                         id="delete" style="border:0;">
                                                         <i class="material-icons">done</i>

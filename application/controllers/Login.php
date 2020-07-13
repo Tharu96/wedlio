@@ -67,7 +67,10 @@ class Login extends CI_Controller
 						$this->load->view("admin/dashboard");
 					}
 					elseif($level== 2){
-						$this->load->view("vendors/vendorDashboard/dashboard");
+						$this->load->model('Customer_model');
+						$userId=$this->session->userdata('id');
+						$data=$this->Customer_model->load_all_customer_requests($userId);
+						$this->load->view("vendors/vendorDashboard/dashboard",['customerRequests'=>$data]);
 					}
 
 					else
